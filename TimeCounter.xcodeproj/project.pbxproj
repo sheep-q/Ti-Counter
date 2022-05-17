@@ -1,0 +1,514 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		059BD3B087307F82473BEAFF /* Pods_TimeCounter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4822606492F54586624B4DF /* Pods_TimeCounter.framework */; };
+		4642BBFF283342080073162A /* TimeCounterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4642BBFE283342080073162A /* TimeCounterApp.swift */; };
+		4642BC01283342080073162A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4642BC00283342080073162A /* ContentView.swift */; };
+		4642BC032833420C0073162A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4642BC022833420C0073162A /* Assets.xcassets */; };
+		4642BC062833420C0073162A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4642BC052833420C0073162A /* Preview Assets.xcassets */; };
+		4642BC0E283343610073162A /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4642BC0D283343610073162A /* LottieView.swift */; };
+		4642BC142833445F0073162A /* 105000-tourist-enjoying-the-walk.json in Resources */ = {isa = PBXBuildFile; fileRef = 4642BC132833445E0073162A /* 105000-tourist-enjoying-the-walk.json */; };
+		4642BC18283345740073162A /* Color+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4642BC17283345740073162A /* Color+extension.swift */; };
+		4642BC1B283346950073162A /* Palette Color .swift in Sources */ = {isa = PBXBuildFile; fileRef = 4642BC1A283346950073162A /* Palette Color .swift */; };
+		4642BC252833748E0073162A /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4642BC242833748E0073162A /* TimerView.swift */; };
+		4642BC2A28337A110073162A /* Technology-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4642BC2628337A110073162A /* Technology-Bold.ttf */; };
+		4642BC2B28337A110073162A /* Technology-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4642BC2728337A110073162A /* Technology-Italic.ttf */; };
+		4642BC2C28337A110073162A /* Technology-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4642BC2828337A110073162A /* Technology-BoldItalic.ttf */; };
+		4642BC2D28337A110073162A /* Technology.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4642BC2928337A110073162A /* Technology.ttf */; };
+		4642BC3128337B3B0073162A /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4642BC3028337B3B0073162A /* Fonts.swift */; };
+		4642BC33283386AD0073162A /* 87082-love-heart.json in Resources */ = {isa = PBXBuildFile; fileRef = 4642BC32283386AC0073162A /* 87082-love-heart.json */; };
+		467FB86528338BC20067FBE8 /* AlertVC+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467FB86428338BC20067FBE8 /* AlertVC+.swift */; };
+		467FB867283392B80067FBE8 /* 91956-work-from-home.json in Resources */ = {isa = PBXBuildFile; fileRef = 467FB866283392B80067FBE8 /* 91956-work-from-home.json */; };
+		467FB869283393B50067FBE8 /* TextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467FB868283393B50067FBE8 /* TextField+.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2E02234BF57B9E3D3EFDE0BE /* Pods-TimeCounter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeCounter.release.xcconfig"; path = "Target Support Files/Pods-TimeCounter/Pods-TimeCounter.release.xcconfig"; sourceTree = "<group>"; };
+		4642BBFB283342080073162A /* TimeCounter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeCounter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4642BBFE283342080073162A /* TimeCounterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeCounterApp.swift; sourceTree = "<group>"; };
+		4642BC00283342080073162A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		4642BC022833420C0073162A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4642BC052833420C0073162A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4642BC0D283343610073162A /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		4642BC132833445E0073162A /* 105000-tourist-enjoying-the-walk.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "105000-tourist-enjoying-the-walk.json"; sourceTree = "<group>"; };
+		4642BC17283345740073162A /* Color+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+extension.swift"; sourceTree = "<group>"; };
+		4642BC1A283346950073162A /* Palette Color .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Palette Color .swift"; sourceTree = "<group>"; };
+		4642BC242833748E0073162A /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		4642BC2628337A110073162A /* Technology-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Technology-Bold.ttf"; sourceTree = "<group>"; };
+		4642BC2728337A110073162A /* Technology-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Technology-Italic.ttf"; sourceTree = "<group>"; };
+		4642BC2828337A110073162A /* Technology-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Technology-BoldItalic.ttf"; sourceTree = "<group>"; };
+		4642BC2928337A110073162A /* Technology.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Technology.ttf; sourceTree = "<group>"; };
+		4642BC2F28337ABC0073162A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		4642BC3028337B3B0073162A /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		4642BC32283386AC0073162A /* 87082-love-heart.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "87082-love-heart.json"; sourceTree = "<group>"; };
+		467FB86428338BC20067FBE8 /* AlertVC+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlertVC+.swift"; sourceTree = "<group>"; };
+		467FB866283392B80067FBE8 /* 91956-work-from-home.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "91956-work-from-home.json"; sourceTree = "<group>"; };
+		467FB868283393B50067FBE8 /* TextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField+.swift"; sourceTree = "<group>"; };
+		B4822606492F54586624B4DF /* Pods_TimeCounter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimeCounter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4D563EB90B4CC5AE4E965D7 /* Pods-TimeCounter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeCounter.debug.xcconfig"; path = "Target Support Files/Pods-TimeCounter/Pods-TimeCounter.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4642BBF8283342080073162A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				059BD3B087307F82473BEAFF /* Pods_TimeCounter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2CA71F304DFF9AEE09D0B3FE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B4822606492F54586624B4DF /* Pods_TimeCounter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4642BBF2283342080073162A = {
+			isa = PBXGroup;
+			children = (
+				4642BBFD283342080073162A /* TimeCounter */,
+				4642BBFC283342080073162A /* Products */,
+				50C7EF7655EDE69303E5B99F /* Pods */,
+				2CA71F304DFF9AEE09D0B3FE /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		4642BBFC283342080073162A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4642BBFB283342080073162A /* TimeCounter.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4642BBFD283342080073162A /* TimeCounter */ = {
+			isa = PBXGroup;
+			children = (
+				4642BC2F28337ABC0073162A /* Info.plist */,
+				4642BBFE283342080073162A /* TimeCounterApp.swift */,
+				4642BC00283342080073162A /* ContentView.swift */,
+				4642BC242833748E0073162A /* TimerView.swift */,
+				4642BC15283344900073162A /* Extension */,
+				4642BC19283346650073162A /* Help */,
+				4642BC12283344470073162A /* Lottie Source */,
+				4642BC0C2833434A0073162A /* Lottie */,
+				4642BC022833420C0073162A /* Assets.xcassets */,
+				4642BC1E283348F00073162A /* Font */,
+				4642BC042833420C0073162A /* Preview Content */,
+			);
+			path = TimeCounter;
+			sourceTree = "<group>";
+		};
+		4642BC042833420C0073162A /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				4642BC052833420C0073162A /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4642BC0C2833434A0073162A /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				4642BC0D283343610073162A /* LottieView.swift */,
+			);
+			path = Lottie;
+			sourceTree = "<group>";
+		};
+		4642BC12283344470073162A /* Lottie Source */ = {
+			isa = PBXGroup;
+			children = (
+				4642BC32283386AC0073162A /* 87082-love-heart.json */,
+				467FB866283392B80067FBE8 /* 91956-work-from-home.json */,
+				4642BC132833445E0073162A /* 105000-tourist-enjoying-the-walk.json */,
+			);
+			path = "Lottie Source";
+			sourceTree = "<group>";
+		};
+		4642BC15283344900073162A /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				4642BC17283345740073162A /* Color+extension.swift */,
+				467FB868283393B50067FBE8 /* TextField+.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		4642BC19283346650073162A /* Help */ = {
+			isa = PBXGroup;
+			children = (
+				4642BC1A283346950073162A /* Palette Color .swift */,
+				4642BC3028337B3B0073162A /* Fonts.swift */,
+				467FB86428338BC20067FBE8 /* AlertVC+.swift */,
+			);
+			path = Help;
+			sourceTree = "<group>";
+		};
+		4642BC1E283348F00073162A /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				4642BC2628337A110073162A /* Technology-Bold.ttf */,
+				4642BC2828337A110073162A /* Technology-BoldItalic.ttf */,
+				4642BC2728337A110073162A /* Technology-Italic.ttf */,
+				4642BC2928337A110073162A /* Technology.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		50C7EF7655EDE69303E5B99F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F4D563EB90B4CC5AE4E965D7 /* Pods-TimeCounter.debug.xcconfig */,
+				2E02234BF57B9E3D3EFDE0BE /* Pods-TimeCounter.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4642BBFA283342080073162A /* TimeCounter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4642BC092833420C0073162A /* Build configuration list for PBXNativeTarget "TimeCounter" */;
+			buildPhases = (
+				90546C2193D653100EA2A6F0 /* [CP] Check Pods Manifest.lock */,
+				4642BBF7283342080073162A /* Sources */,
+				4642BBF8283342080073162A /* Frameworks */,
+				4642BBF9283342080073162A /* Resources */,
+				74D50580C90C72918442238E /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TimeCounter;
+			productName = TimeCounter;
+			productReference = 4642BBFB283342080073162A /* TimeCounter.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4642BBF3283342080073162A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1310;
+				LastUpgradeCheck = 1310;
+				TargetAttributes = {
+					4642BBFA283342080073162A = {
+						CreatedOnToolsVersion = 13.1;
+					};
+				};
+			};
+			buildConfigurationList = 4642BBF6283342080073162A /* Build configuration list for PBXProject "TimeCounter" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4642BBF2283342080073162A;
+			productRefGroup = 4642BBFC283342080073162A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4642BBFA283342080073162A /* TimeCounter */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4642BBF9283342080073162A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4642BC062833420C0073162A /* Preview Assets.xcassets in Resources */,
+				4642BC2C28337A110073162A /* Technology-BoldItalic.ttf in Resources */,
+				4642BC33283386AD0073162A /* 87082-love-heart.json in Resources */,
+				4642BC2A28337A110073162A /* Technology-Bold.ttf in Resources */,
+				467FB867283392B80067FBE8 /* 91956-work-from-home.json in Resources */,
+				4642BC032833420C0073162A /* Assets.xcassets in Resources */,
+				4642BC142833445F0073162A /* 105000-tourist-enjoying-the-walk.json in Resources */,
+				4642BC2D28337A110073162A /* Technology.ttf in Resources */,
+				4642BC2B28337A110073162A /* Technology-Italic.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		74D50580C90C72918442238E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TimeCounter/Pods-TimeCounter-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TimeCounter/Pods-TimeCounter-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TimeCounter/Pods-TimeCounter-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		90546C2193D653100EA2A6F0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TimeCounter-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4642BBF7283342080073162A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4642BC3128337B3B0073162A /* Fonts.swift in Sources */,
+				467FB869283393B50067FBE8 /* TextField+.swift in Sources */,
+				4642BC252833748E0073162A /* TimerView.swift in Sources */,
+				4642BC01283342080073162A /* ContentView.swift in Sources */,
+				4642BC1B283346950073162A /* Palette Color .swift in Sources */,
+				4642BBFF283342080073162A /* TimeCounterApp.swift in Sources */,
+				467FB86528338BC20067FBE8 /* AlertVC+.swift in Sources */,
+				4642BC0E283343610073162A /* LottieView.swift in Sources */,
+				4642BC18283345740073162A /* Color+extension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		4642BC072833420C0073162A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4642BC082833420C0073162A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4642BC0A2833420C0073162A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4D563EB90B4CC5AE4E965D7 /* Pods-TimeCounter.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TimeCounter/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TimeCounter/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TimeCounter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4642BC0B2833420C0073162A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E02234BF57B9E3D3EFDE0BE /* Pods-TimeCounter.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TimeCounter/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TimeCounter/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TimeCounter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4642BBF6283342080073162A /* Build configuration list for PBXProject "TimeCounter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4642BC072833420C0073162A /* Debug */,
+				4642BC082833420C0073162A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4642BC092833420C0073162A /* Build configuration list for PBXNativeTarget "TimeCounter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4642BC0A2833420C0073162A /* Debug */,
+				4642BC0B2833420C0073162A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4642BBF3283342080073162A /* Project object */;
+}
