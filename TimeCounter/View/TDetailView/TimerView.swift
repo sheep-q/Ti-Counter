@@ -12,6 +12,7 @@ import Lottie
 struct TimerView: View {
     @State var nowDate: Date = Date()
     let referenceDate: Date
+    let countkind: CountKinds
     @State var day: Bool = false
     @State var hour: Bool = false
     @State var min: Bool = false
@@ -27,19 +28,19 @@ struct TimerView: View {
         ZStack {
             VStack(alignment: .leading, spacing: -10) {
                 HStack(alignment: .center) {
-                    Text(countDownString(from:referenceDate, day: true))
+                    Text(countString(from:referenceDate, day: true))
                     Text("days")
                         .font(.custom(Technology.italic, size: 30))
                         .offset(y: 13)
                 }
                 HStack {
-                    Text(countDownString(from:referenceDate, hour: true))
+                    Text(countString(from:referenceDate, hour: true))
                     Text("hours")
                         .font(.custom(Technology.italic, size: 30))
                         .offset(y: 13)
                 }
                 HStack {
-                    Text(countDownString(from:referenceDate, min: true))
+                    Text(countString(from:referenceDate, min: true))
                     Text("mins")
                         .font(.custom(Technology.italic, size: 30))
                         .offset(y: 13)
@@ -49,16 +50,31 @@ struct TimerView: View {
             .onAppear(perform: {
                 _ = self.timer
             })
-//            .foregroundColor(.white)
         }
     }
 
-    func countDownString(from date: Date, day: Bool = false, hour: Bool = false, min: Bool = false, second: Bool = false) -> String {
+    func countString(from date: Date, day: Bool = false, hour: Bool = false, min: Bool = false, second: Bool = false) -> String {
         let calendar = Calendar(identifier: .gregorian)
-        let components = calendar
-            .dateComponents([.day, .hour, .minute, .second],
-                            from: nowDate,
-                            to: referenceDate)
+        var components = calendar
+            .dateComponents([.year,.month, .day, .hour, .minute, .second],
+                            from: referenceDate,
+                            to: nowDate)
+        
+        switch countkind {
+        case .default:
+            break
+        case .increase:
+            components = calendar
+                .dateComponents([.day, .hour, .minute, .second],
+                                from: referenceDate,
+                                to: nowDate)
+        case .down:
+            components = calendar
+                .dateComponents([.day, .hour, .minute, .second],
+                                from: nowDate,
+                                to: referenceDate)
+        }
+        
         if day {
             return String(format: "%01d", components.day ?? 0)
         }

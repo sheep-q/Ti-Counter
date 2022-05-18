@@ -9,6 +9,11 @@ import Foundation
 import SwiftUI
 import Lottie
 
+enum ProgresKeyFrames: CGFloat {
+    case start = 140
+    case end = 1
+}
+
 struct LottieView: UIViewRepresentable {
     var name = "105188-berry-the-old-man"
     var loopMode: LottieLoopMode = .loop
@@ -22,6 +27,9 @@ struct LottieView: UIViewRepresentable {
         animationView.contentMode = .scaleAspectFit
         animationView.loopMode = loopMode
         animationView.play()
+        animationView.play { _ in
+            pauseProgress()
+        }
         
         animationView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(animationView)
@@ -30,6 +38,10 @@ struct LottieView: UIViewRepresentable {
             animationView.heightAnchor.constraint(equalTo: view.heightAnchor),
             animationView.widthAnchor.constraint(equalTo: view.widthAnchor)
         ])
+        
+        func pauseProgress() {
+            animationView.play(fromProgress: 0, toProgress: 0.75, loopMode: .playOnce, completion: nil)
+        }
         
         return view
     }
