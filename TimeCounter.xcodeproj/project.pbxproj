@@ -23,8 +23,12 @@
 		4642BC2D28337A110073162A /* Technology.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4642BC2928337A110073162A /* Technology.ttf */; };
 		4642BC3128337B3B0073162A /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4642BC3028337B3B0073162A /* Fonts.swift */; };
 		4642BC33283386AD0073162A /* 87082-love-heart.json in Resources */ = {isa = PBXBuildFile; fileRef = 4642BC32283386AC0073162A /* 87082-love-heart.json */; };
+		4666B65528349B7500A5C65E /* TDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4666B65428349B7500A5C65E /* TDetailView.swift */; };
+		4666B65728349BB800A5C65E /* TDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4666B65628349BB800A5C65E /* TDetailViewModel.swift */; };
+		4666B65A2834A3C600A5C65E /* PickColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4666B6592834A3C600A5C65E /* PickColorView.swift */; };
+		4672AB7D28347DE800ACB775 /* 105407-rocketship-smoke-trail.json in Resources */ = {isa = PBXBuildFile; fileRef = 4672AB7C28347DE800ACB775 /* 105407-rocketship-smoke-trail.json */; };
+		467D66422834949200D764DF /* MenuPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467D66412834949200D764DF /* MenuPicker.swift */; };
 		467FB86528338BC20067FBE8 /* AlertVC+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467FB86428338BC20067FBE8 /* AlertVC+.swift */; };
-		467FB867283392B80067FBE8 /* 91956-work-from-home.json in Resources */ = {isa = PBXBuildFile; fileRef = 467FB866283392B80067FBE8 /* 91956-work-from-home.json */; };
 		467FB869283393B50067FBE8 /* TextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467FB868283393B50067FBE8 /* TextField+.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,8 +51,12 @@
 		4642BC2F28337ABC0073162A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		4642BC3028337B3B0073162A /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		4642BC32283386AC0073162A /* 87082-love-heart.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "87082-love-heart.json"; sourceTree = "<group>"; };
+		4666B65428349B7500A5C65E /* TDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDetailView.swift; sourceTree = "<group>"; };
+		4666B65628349BB800A5C65E /* TDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDetailViewModel.swift; sourceTree = "<group>"; };
+		4666B6592834A3C600A5C65E /* PickColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickColorView.swift; sourceTree = "<group>"; };
+		4672AB7C28347DE800ACB775 /* 105407-rocketship-smoke-trail.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "105407-rocketship-smoke-trail.json"; sourceTree = "<group>"; };
+		467D66412834949200D764DF /* MenuPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPicker.swift; sourceTree = "<group>"; };
 		467FB86428338BC20067FBE8 /* AlertVC+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlertVC+.swift"; sourceTree = "<group>"; };
-		467FB866283392B80067FBE8 /* 91956-work-from-home.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "91956-work-from-home.json"; sourceTree = "<group>"; };
 		467FB868283393B50067FBE8 /* TextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField+.swift"; sourceTree = "<group>"; };
 		B4822606492F54586624B4DF /* Pods_TimeCounter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimeCounter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4D563EB90B4CC5AE4E965D7 /* Pods-TimeCounter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeCounter.debug.xcconfig"; path = "Target Support Files/Pods-TimeCounter/Pods-TimeCounter.debug.xcconfig"; sourceTree = "<group>"; };
@@ -98,7 +106,7 @@
 				4642BC2F28337ABC0073162A /* Info.plist */,
 				4642BBFE283342080073162A /* TimeCounterApp.swift */,
 				4642BC00283342080073162A /* ContentView.swift */,
-				4642BC242833748E0073162A /* TimerView.swift */,
+				4666B65228349B4C00A5C65E /* View */,
 				4642BC15283344900073162A /* Extension */,
 				4642BC19283346650073162A /* Help */,
 				4642BC12283344470073162A /* Lottie Source */,
@@ -129,8 +137,8 @@
 		4642BC12283344470073162A /* Lottie Source */ = {
 			isa = PBXGroup;
 			children = (
+				4672AB7C28347DE800ACB775 /* 105407-rocketship-smoke-trail.json */,
 				4642BC32283386AC0073162A /* 87082-love-heart.json */,
-				467FB866283392B80067FBE8 /* 91956-work-from-home.json */,
 				4642BC132833445E0073162A /* 105000-tourist-enjoying-the-walk.json */,
 			);
 			path = "Lottie Source";
@@ -151,6 +159,7 @@
 				4642BC1A283346950073162A /* Palette Color .swift */,
 				4642BC3028337B3B0073162A /* Fonts.swift */,
 				467FB86428338BC20067FBE8 /* AlertVC+.swift */,
+				467D66412834949200D764DF /* MenuPicker.swift */,
 			);
 			path = Help;
 			sourceTree = "<group>";
@@ -164,6 +173,33 @@
 				4642BC2928337A110073162A /* Technology.ttf */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		4666B65228349B4C00A5C65E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4666B65328349B5200A5C65E /* TDetailView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4666B65328349B5200A5C65E /* TDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				4666B65428349B7500A5C65E /* TDetailView.swift */,
+				4666B65628349BB800A5C65E /* TDetailViewModel.swift */,
+				4642BC242833748E0073162A /* TimerView.swift */,
+				4666B6582834A3B100A5C65E /* PickColorView */,
+			);
+			path = TDetailView;
+			sourceTree = "<group>";
+		};
+		4666B6582834A3B100A5C65E /* PickColorView */ = {
+			isa = PBXGroup;
+			children = (
+				4666B6592834A3C600A5C65E /* PickColorView.swift */,
+			);
+			path = PickColorView;
 			sourceTree = "<group>";
 		};
 		50C7EF7655EDE69303E5B99F /* Pods */ = {
@@ -239,9 +275,9 @@
 				4642BC2C28337A110073162A /* Technology-BoldItalic.ttf in Resources */,
 				4642BC33283386AD0073162A /* 87082-love-heart.json in Resources */,
 				4642BC2A28337A110073162A /* Technology-Bold.ttf in Resources */,
-				467FB867283392B80067FBE8 /* 91956-work-from-home.json in Resources */,
 				4642BC032833420C0073162A /* Assets.xcassets in Resources */,
 				4642BC142833445F0073162A /* 105000-tourist-enjoying-the-walk.json in Resources */,
+				4672AB7D28347DE800ACB775 /* 105407-rocketship-smoke-trail.json in Resources */,
 				4642BC2D28337A110073162A /* Technology.ttf in Resources */,
 				4642BC2B28337A110073162A /* Technology-Italic.ttf in Resources */,
 			);
@@ -296,13 +332,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4666B65728349BB800A5C65E /* TDetailViewModel.swift in Sources */,
 				4642BC3128337B3B0073162A /* Fonts.swift in Sources */,
+				467D66422834949200D764DF /* MenuPicker.swift in Sources */,
 				467FB869283393B50067FBE8 /* TextField+.swift in Sources */,
 				4642BC252833748E0073162A /* TimerView.swift in Sources */,
 				4642BC01283342080073162A /* ContentView.swift in Sources */,
 				4642BC1B283346950073162A /* Palette Color .swift in Sources */,
 				4642BBFF283342080073162A /* TimeCounterApp.swift in Sources */,
+				4666B65A2834A3C600A5C65E /* PickColorView.swift in Sources */,
 				467FB86528338BC20067FBE8 /* AlertVC+.swift in Sources */,
+				4666B65528349B7500A5C65E /* TDetailView.swift in Sources */,
 				4642BC0E283343610073162A /* LottieView.swift in Sources */,
 				4642BC18283345740073162A /* Color+extension.swift in Sources */,
 			);
