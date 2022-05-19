@@ -25,32 +25,29 @@ struct PickColorView: View {
     var body: some View {
         VStack {
             HStack(alignment: .center) {
-                if isExpand {
-                    Image(systemName: "chevron.forward")
-                        .foregroundColor(Color(hex: Palette.gray))
-                        .onTapGesture {
-                            withAnimation(.interactiveSpring(response: 0.6, dampingFraction: 0.7, blendDuration: 0.7)) {
-                                isExpand.toggle()
-                            }
-                        }
-                } else {
-                    Image(systemName: "chevron.backward")
-                        .foregroundColor(Color(hex: Palette.gray))
-                        .onTapGesture {
-                            withAnimation(.interactiveSpring(response: 0.6, dampingFraction: 0.7, blendDuration: 0.7)) {
-                                isExpand.toggle()
-                            }
-                        }
+                HStack(alignment: .center){
+                    if isExpand {
+                        Image(systemName: "chevron.forward")
+                            .foregroundColor(Color(hex: Palette.gray))
+                    } else {
+                        Image(systemName: "chevron.backward")
+                            .foregroundColor(Color(hex: Palette.gray))
+                    }
+                    
+                    if isText {
+                        Text("A")
+                            .font(.system(size: 30).bold())
+                            .foregroundColor(Color(hex: currenTextColor))
+                    } else {
+                        Circle()
+                            .foregroundColor(Color(hex: currentColor))
+                            .frame(width: 40, height: 40)
+                    }
                 }
-                
-                if isText {
-                    Text("A")
-                        .font(.system(size: 30).bold())
-                        .foregroundColor(Color(hex: currenTextColor))
-                } else {
-                    Circle()
-                        .foregroundColor(Color(hex: currentColor))
-                        .frame(width: 40, height: 40)
+                .onTapGesture {
+                    withAnimation(.interactiveSpring(response: 0.6, dampingFraction: 0.7, blendDuration: 0.7)) {
+                        isExpand.toggle()
+                    }
                 }
                 
                 if isExpand {

@@ -21,7 +21,10 @@ struct TDetailView: View {
             Color(hex: viewModel.backgroundColor)
                 .ignoresSafeArea()
             
-            LottieView(name: "87082-love-heart", loopMode: .playOnce)
+//            LottieAnimationView(name: viewModel.currentAnimation)
+//                .frame(height: 200)
+            
+            LottieView(name: viewModel.currentAnimation, loopMode: .playOnce)
                 .frame(height: 400)
                 .offset(x: 60, y: -50)
                 .scaleEffect(1.2)
@@ -71,7 +74,7 @@ struct TDetailView: View {
                     .colorInvert()
                 }
                 .padding(.top, -15)
-                .padding(.bottom, 5)
+                .padding(.bottom, 0)
                 
                 HStack {
                     RoundedRectangle(cornerRadius: 7)
@@ -85,14 +88,21 @@ struct TDetailView: View {
                 
                 TimerView(referenceDate: pickDate, countkind: viewModel.currentKindCount)
                     .padding(.top, 30)
+                
                 Spacer()
                 
-                PickColorView { value in
-                    viewModel.backgroundColor = value
-                }
-                
-                PickColorView(isText: true) { value in
-                    viewModel.textCorlor = value
+                VStack(alignment: .trailing) {
+                    PickColorView(isText: true) { value in
+                        viewModel.textCorlor = value
+                    }
+                    
+                    PickColorView { value in
+                        viewModel.backgroundColor = value
+                    }
+                    
+                    PickAnimationView { value in
+                        viewModel.currentAnimation = value
+                    }
                 }
                 Spacer()
             }
