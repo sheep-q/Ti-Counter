@@ -13,10 +13,12 @@ struct TimerView: View {
     @State var nowDate: Date = Date()
     let referenceDate: Date
     let countkind: CountKinds
-    @State var day: Bool = false
-    @State var hour: Bool = false
-    @State var min: Bool = false
-    @State var second: Bool = false
+    @State var isYear = false
+    @State var isMonth = false
+    @State var isDay = true
+    @State var isHour = false
+    @State var isMin = false
+    @State var isSecond = false
     
     var timer: Timer {
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true) {_ in
@@ -27,6 +29,26 @@ struct TimerView: View {
     var body: some View {
         ZStack {
             VStack(alignment: .leading, spacing: -10) {
+                Button {
+                    //
+                } label: {
+                    Label {
+                        Text("Type")
+                            .font(.body)
+                    } icon: {
+                        Image(systemName: "pencil.circle.fill")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 20, height: 20)
+                    }
+                }
+                .padding(5)
+                .background {
+                    RoundedRectangle(cornerRadius: 7)
+                        .fill(.ultraThinMaterial)
+                }
+                .padding(.bottom)
+
                 HStack(alignment: .center) {
                     Text(countString(from:referenceDate, day: true))
                     Text("days")
@@ -52,11 +74,35 @@ struct TimerView: View {
             })
         }
     }
+    
+    func dateComponent() -> Set<Calendar.Component> {
+        var set = Set<Calendar.Component>()
+        
+        if isYear {
+            set.insert(.year)
+        }
+        if isMonth {
+            set.insert(.month)
+        }
+        if isDay {
+            set.insert(.day)
+        }
+        if isHour {
+            set.insert(.hour)
+        }
+        if isMin {
+            set.insert(.minute)
+        }
+        if isSecond {
+            set.insert(.second)
+        }
+        return set
+    }
 
-    func countString(from date: Date, day: Bool = false, hour: Bool = false, min: Bool = false, second: Bool = false) -> String {
+    func countString(from date: Date, year: Bool = false, month: Bool = false, day: Bool = false, hour: Bool = false, min: Bool = false, second: Bool = false) -> String {
         let calendar = Calendar(identifier: .gregorian)
         var components = calendar
-            .dateComponents([.year,.month, .day, .hour, .minute, .second],
+            .dateComponents(dateComponent(),
                             from: referenceDate,
                             to: nowDate)
         
@@ -65,12 +111,12 @@ struct TimerView: View {
             break
         case .increase:
             components = calendar
-                .dateComponents([.day, .hour, .minute, .second],
+                .dateComponents(dateComponent(),
                                 from: referenceDate,
                                 to: nowDate)
         case .down:
             components = calendar
-                .dateComponents([.day, .hour, .minute, .second],
+                .dateComponents(dateComponent(),
                                 from: nowDate,
                                 to: referenceDate)
         }

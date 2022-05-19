@@ -18,6 +18,8 @@ class TDetailViewModel: ObservableObject {
     @Published var title: String = "Work From Home"
     @Published var backgroundColor = Palette.colorArray.first ?? "000000"
     @Published var textCorlor = Palette.textColor.first ?? "FFFFFF"
+    @Published var currentAnimation = LottieImage.data.first ?? "87082-love-heart"
+    @Published var dateComponents = DateComponent()
     
     func increaseKind() {
         currentKindCount = CountKinds.increase
