@@ -19,6 +19,7 @@ class TDetailViewModel: ObservableObject {
     @Published var backgroundColor = Palette.colorArray.first ?? "000000"
     @Published var textCorlor = Palette.textColor.first ?? "FFFFFF"
     @Published var currentAnimation = LottieImage.data.first ?? "87082-love-heart"
+    @Published var lastAnimation = ""
     @Published var dateComponents = DateComponent()
     
     func increaseKind() {
