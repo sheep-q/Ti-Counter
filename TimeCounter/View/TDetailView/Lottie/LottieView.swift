@@ -15,7 +15,8 @@ enum ProgresKeyFrames: CGFloat {
 }
 
 struct LottieView: UIViewRepresentable {
-    var name = "105188-berry-the-old-man"
+    var name = "87082-love-heart"
+    var lastName = ""
     var loopMode: LottieLoopMode = .playOnce
     var animationView = AnimationView()
     
@@ -26,6 +27,9 @@ struct LottieView: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: UIViewType, context: UIViewRepresentableContext<LottieView>) {
+        guard lastName != name else {
+            return
+        }
         uiView.subviews.forEach({$0.removeFromSuperview()})
         
         animationView.animation = Animation.named(name)

@@ -27,6 +27,7 @@
 		4642BC2D28337A110073162A /* Technology.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4642BC2928337A110073162A /* Technology.ttf */; };
 		4642BC3128337B3B0073162A /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4642BC3028337B3B0073162A /* Fonts.swift */; };
 		4642BC33283386AD0073162A /* 87082-love-heart.json in Resources */ = {isa = PBXBuildFile; fileRef = 4642BC32283386AC0073162A /* 87082-love-heart.json */; };
+		465B3DDE28378035004FB66A /* NoteAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465B3DDD28378035004FB66A /* NoteAppView.swift */; };
 		4666B65528349B7500A5C65E /* TDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4666B65428349B7500A5C65E /* TDetailView.swift */; };
 		4666B65728349BB800A5C65E /* TDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4666B65628349BB800A5C65E /* TDetailViewModel.swift */; };
 		4666B65A2834A3C600A5C65E /* PickColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4666B6592834A3C600A5C65E /* PickColorView.swift */; };
@@ -64,6 +65,7 @@
 		4642BC2F28337ABC0073162A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		4642BC3028337B3B0073162A /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		4642BC32283386AC0073162A /* 87082-love-heart.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "87082-love-heart.json"; sourceTree = "<group>"; };
+		465B3DDD28378035004FB66A /* NoteAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteAppView.swift; sourceTree = "<group>"; };
 		4666B65428349B7500A5C65E /* TDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDetailView.swift; sourceTree = "<group>"; };
 		4666B65628349BB800A5C65E /* TDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDetailViewModel.swift; sourceTree = "<group>"; };
 		4666B6592834A3C600A5C65E /* PickColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickColorView.swift; sourceTree = "<group>"; };
@@ -199,9 +201,18 @@
 			path = Font;
 			sourceTree = "<group>";
 		};
+		465B3DDC28378026004FB66A /* NoteApp */ = {
+			isa = PBXGroup;
+			children = (
+				465B3DDD28378035004FB66A /* NoteAppView.swift */,
+			);
+			path = NoteApp;
+			sourceTree = "<group>";
+		};
 		4666B65228349B4C00A5C65E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				465B3DDC28378026004FB66A /* NoteApp */,
 				4666B65328349B5200A5C65E /* TDetailView */,
 			);
 			path = View;
@@ -368,6 +379,7 @@
 				4666B65728349BB800A5C65E /* TDetailViewModel.swift in Sources */,
 				4642BC3128337B3B0073162A /* Fonts.swift in Sources */,
 				467D66422834949200D764DF /* MenuPicker.swift in Sources */,
+				465B3DDE28378035004FB66A /* NoteAppView.swift in Sources */,
 				467FB869283393B50067FBE8 /* TextField+.swift in Sources */,
 				4642BC252833748E0073162A /* TimerView.swift in Sources */,
 				4642BC01283342080073162A /* ContentView.swift in Sources */,

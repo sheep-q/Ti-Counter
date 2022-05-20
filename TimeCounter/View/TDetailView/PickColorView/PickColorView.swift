@@ -90,7 +90,7 @@ struct PickColorView: View {
             }
             
         }
-        .frame(maxWidth: .infinity, alignment: .trailing)
+        .frame(alignment: .trailing)
         .padding(.trailing, 10)
     }
 }
