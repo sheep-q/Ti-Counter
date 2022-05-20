@@ -8,26 +8,24 @@
 import SwiftUI
 
 struct TDetailView: View {
-    
     @ObservedObject var viewModel = TDetailViewModel()
-    
+    @ObservedObject var dateComponent = DateComponent()
     @State private var pickDate = Date()
     @State private var title = "Work From Home"
     @State private var changeTitle = false
     
     var body: some View {
         ZStack {
-//            Color(hex: Palette.colorArray.randomElement() ?? "fcbf49")
             Color(hex: viewModel.backgroundColor)
                 .ignoresSafeArea()
             
-//            LottieAnimationView(name: viewModel.currentAnimation)
-//                .frame(height: 200)
-            
-            LottieView(name: viewModel.currentAnimation, loopMode: .playOnce)
+            // lack reload animation when reload view
+            LottieView(name: viewModel.currentAnimation,
+                       lastName: viewModel.lastAnimation,
+                       loopMode: .playOnce)
                 .frame(height: 400)
-                .offset(x: 60, y: -50)
-                .scaleEffect(1.2)
+                .offset(x: 75, y: -50)
+                .scaleEffect(1)
             
             VStack(alignment: .leading) {
                 Spacer().frame(height: 40)
@@ -66,6 +64,12 @@ struct TDetailView: View {
                     } label: {
                         Text(viewModel.currentKindCount.rawValue)
                             .font(.body)
+                            .padding(7)
+                            .background {
+                                RoundedRectangle(cornerRadius: 10)
+                                    .fill(.ultraThinMaterial)
+                                    .opacity(0.2)
+                            }
                     }
                     
                     DatePicker(selection: $pickDate, displayedComponents: [.date, .hourAndMinute]) {}
@@ -86,28 +90,34 @@ struct TDetailView: View {
                 }
                 .padding(.vertical, 0)
                 
-                TimerView(referenceDate: pickDate, countkind: viewModel.currentKindCount)
-                    .padding(.top, 30)
-                
-                Spacer()
-                
-                VStack(alignment: .trailing) {
-                    PickColorView(isText: true) { value in
-                        viewModel.textCorlor = value
-                    }
-                    
-                    PickColorView { value in
-                        viewModel.backgroundColor = value
-                    }
-                    
-                    PickAnimationView { value in
-                        viewModel.currentAnimation = value
-                    }
-                }
+                TimerView(dateComponent: dateComponent,
+                          referenceDate: pickDate,
+                          countkind: viewModel.currentKindCount)
+                    .padding(.top, 0)
                 Spacer()
             }
             .padding(.leading, 30)
             .frame(maxWidth: .infinity ,alignment: .leading)
+            
+            VStack(alignment: .trailing) {
+                Spacer()
+                PickColorView(isText: true) { value in
+                    viewModel.textCorlor = value
+                }
+                
+                PickColorView { value in
+                    viewModel.backgroundColor = value
+                }
+                
+                PickAnimationView { value in
+                    guard viewModel.currentAnimation != value else {
+                        return
+                    }
+                    viewModel.lastAnimation = viewModel.currentAnimation
+                    viewModel.currentAnimation = value
+                }
+            }
+            .padding(.leading, 20)
         }
         .foregroundColor(Color(hex: viewModel.textCorlor))
     }

@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct DateComponent {
-    var year = false
-    var month = false
-    var day = true
-    var hour = false
-    var min = false
-    var second = false
+class DateComponent: ObservableObject {
+    @Published var isYear = false
+    @Published var isMonth = false
+    @Published var isDay = true
+    @Published var isHour = false
+    @Published var isMin = false
+    @Published var isSecond = false
 }
