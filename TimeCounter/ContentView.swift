@@ -10,7 +10,15 @@ import SwiftUI
 struct ContentView: View {
     
     var body: some View {
-        TDetailView()
+        TabView {
+            TDetailView()
+            TDetailView()
+            TDetailView()
+            NoteAppView()
+        }
+        .tabViewStyle(.page(indexDisplayMode: .always))
+        .ignoresSafeArea()
+//        TDetailView()
 //        NoteAppView()
     }
 }

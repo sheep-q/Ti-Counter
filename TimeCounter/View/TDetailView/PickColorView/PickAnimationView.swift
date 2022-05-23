@@ -22,10 +22,8 @@ struct PickAnimationView: View {
                 HStack(alignment: .center) {
                     if isExpand {
                         Image(systemName: "chevron.forward")
-                            .foregroundColor(Color(hex: Palette.gray))
                     } else {
                         Image(systemName: "chevron.backward")
-                            .foregroundColor(Color(hex: Palette.gray))
                     }
                     
                     Image(currentAnimation)
@@ -67,6 +65,7 @@ struct PickAnimationView: View {
             .background {
                 RoundedRectangle(cornerRadius: CGFloat(10))
                     .fill(.ultraThinMaterial)
+                    .opacity(buttonOpacity)
             }
             
         }

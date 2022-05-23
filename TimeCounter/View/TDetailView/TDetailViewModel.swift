@@ -14,6 +14,7 @@ enum CountKinds: String {
 }
 
 class TDetailViewModel: ObservableObject {
+    @Published var dateComponent = DateComponent()
     @Published var currentKindCount: CountKinds = .default
     @Published var title: String = "Work From Home"
     @Published var backgroundColor = Palette.colorArray.first ?? "000000"
