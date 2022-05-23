@@ -41,38 +41,26 @@ struct TDetailView: View {
                                 isShowNote = true
                             }
                         } label: {
-                            Image(systemName: "square.and.pencil")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 20, height: 20)
-                                .padding(8)
-                                .background {
-                                    RoundedRectangle(cornerRadius: 7)
-                                        .fill(.ultraThinMaterial)
-                                        .opacity(buttonOpacity)
-                                }
-                                .padding(.bottom)
+                            HStack {
+                                Image(systemName: "square.and.pencil")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 20, height: 20)
+                                Spacer().frame(width: 8)
+                                Image(systemName: "bell.circle")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 20, height: 20)
+                            }
+                            .padding(8)
+                            .background {
+                                RoundedRectangle(cornerRadius: 7)
+                                    .fill(.ultraThinMaterial)
+                                    .opacity(buttonOpacity)
+                            }
                         }
                         .sheet(isPresented: $isShowNote) {
                             ToDoView()
-                        }
-                        
-                        Button {
-                            withAnimation {
-                                isShowNoti = true
-                            }
-                        } label: {
-                            Image(systemName: "bell.circle")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 20, height: 20)
-                                .padding(8)
-                                .background {
-                                    RoundedRectangle(cornerRadius: 7)
-                                        .fill(.ultraThinMaterial)
-                                        .opacity(buttonOpacity)
-                                }
-                                .padding(.bottom)
                         }
                     }
                     .frame(alignment: .trailing)
@@ -93,6 +81,7 @@ struct TDetailView: View {
                             .foregroundStyle(.ultraThinMaterial)
                             .frame(width: 20, height: 20)
                     }
+                    
                     if changeTitle {
                         TextField("Title of Ti-Count", text: $viewModel.title)
                             .multilineTextAlignment(.leading)
