@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		059BD3B087307F82473BEAFF /* Pods_TimeCounter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4822606492F54586624B4DF /* Pods_TimeCounter.framework */; };
+		460AD9FC2835D08F0069C15F /* PickAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460AD9FB2835D08F0069C15F /* PickAnimationView.swift */; };
+		460ADA002835D1F70069C15F /* 105599-moody-dog.json in Resources */ = {isa = PBXBuildFile; fileRef = 460AD9FF2835D1F70069C15F /* 105599-moody-dog.json */; };
+		460ADA042835D2190069C15F /* 105188-berry-the-old-man.json in Resources */ = {isa = PBXBuildFile; fileRef = 460ADA032835D2190069C15F /* 105188-berry-the-old-man.json */; };
+		460ADA082835D2AE0069C15F /* LottieImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460ADA072835D2AE0069C15F /* LottieImage.swift */; };
 		4642BBFF283342080073162A /* TimeCounterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4642BBFE283342080073162A /* TimeCounterApp.swift */; };
 		4642BC01283342080073162A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4642BC00283342080073162A /* ContentView.swift */; };
 		4642BC032833420C0073162A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4642BC022833420C0073162A /* Assets.xcassets */; };
@@ -23,13 +27,30 @@
 		4642BC2D28337A110073162A /* Technology.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4642BC2928337A110073162A /* Technology.ttf */; };
 		4642BC3128337B3B0073162A /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4642BC3028337B3B0073162A /* Fonts.swift */; };
 		4642BC33283386AD0073162A /* 87082-love-heart.json in Resources */ = {isa = PBXBuildFile; fileRef = 4642BC32283386AC0073162A /* 87082-love-heart.json */; };
+		465B3DDE28378035004FB66A /* NoteAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465B3DDD28378035004FB66A /* NoteAppView.swift */; };
+		4666B65528349B7500A5C65E /* TDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4666B65428349B7500A5C65E /* TDetailView.swift */; };
+		4666B65728349BB800A5C65E /* TDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4666B65628349BB800A5C65E /* TDetailViewModel.swift */; };
+		4666B65A2834A3C600A5C65E /* PickColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4666B6592834A3C600A5C65E /* PickColorView.swift */; };
+		4672AB7D28347DE800ACB775 /* 105407-rocketship-smoke-trail.json in Resources */ = {isa = PBXBuildFile; fileRef = 4672AB7C28347DE800ACB775 /* 105407-rocketship-smoke-trail.json */; };
+		467D66422834949200D764DF /* MenuPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467D66412834949200D764DF /* MenuPicker.swift */; };
 		467FB86528338BC20067FBE8 /* AlertVC+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467FB86428338BC20067FBE8 /* AlertVC+.swift */; };
-		467FB867283392B80067FBE8 /* 91956-work-from-home.json in Resources */ = {isa = PBXBuildFile; fileRef = 467FB866283392B80067FBE8 /* 91956-work-from-home.json */; };
 		467FB869283393B50067FBE8 /* TextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467FB868283393B50067FBE8 /* TextField+.swift */; };
+		46B3AEC328362D6C00EF0E65 /* LottieAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B3AEC228362D6C00EF0E65 /* LottieAnimationView.swift */; };
+		46B3AEC528362FDB00EF0E65 /* 61224-beer-can.json in Resources */ = {isa = PBXBuildFile; fileRef = 46B3AEC428362FDB00EF0E65 /* 61224-beer-can.json */; };
+		46B3AEC92836340600EF0E65 /* 72515-graduation.json in Resources */ = {isa = PBXBuildFile; fileRef = 46B3AEC62836340600EF0E65 /* 72515-graduation.json */; };
+		46B3AECB2836340600EF0E65 /* 83304-birthday-flutterflow-branded.json in Resources */ = {isa = PBXBuildFile; fileRef = 46B3AEC82836340600EF0E65 /* 83304-birthday-flutterflow-branded.json */; };
+		46B3AECD2836436C00EF0E65 /* DateComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B3AECC2836436C00EF0E65 /* DateComponent.swift */; };
+		E38C410C283A14F300D4298A /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38C410B283A14F300D4298A /* TaskModel.swift */; };
+		E38C4110283A186900D4298A /* TodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38C410F283A186800D4298A /* TodoView.swift */; };
+		E38C4112283A187D00D4298A /* TodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38C4111283A187D00D4298A /* TodoViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2E02234BF57B9E3D3EFDE0BE /* Pods-TimeCounter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeCounter.release.xcconfig"; path = "Target Support Files/Pods-TimeCounter/Pods-TimeCounter.release.xcconfig"; sourceTree = "<group>"; };
+		460AD9FB2835D08F0069C15F /* PickAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickAnimationView.swift; sourceTree = "<group>"; };
+		460AD9FF2835D1F70069C15F /* 105599-moody-dog.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "105599-moody-dog.json"; sourceTree = "<group>"; };
+		460ADA032835D2190069C15F /* 105188-berry-the-old-man.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "105188-berry-the-old-man.json"; sourceTree = "<group>"; };
+		460ADA072835D2AE0069C15F /* LottieImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieImage.swift; sourceTree = "<group>"; };
 		4642BBFB283342080073162A /* TimeCounter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeCounter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4642BBFE283342080073162A /* TimeCounterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeCounterApp.swift; sourceTree = "<group>"; };
 		4642BC00283342080073162A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -47,10 +68,23 @@
 		4642BC2F28337ABC0073162A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		4642BC3028337B3B0073162A /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		4642BC32283386AC0073162A /* 87082-love-heart.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "87082-love-heart.json"; sourceTree = "<group>"; };
+		465B3DDD28378035004FB66A /* NoteAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteAppView.swift; sourceTree = "<group>"; };
+		4666B65428349B7500A5C65E /* TDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDetailView.swift; sourceTree = "<group>"; };
+		4666B65628349BB800A5C65E /* TDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDetailViewModel.swift; sourceTree = "<group>"; };
+		4666B6592834A3C600A5C65E /* PickColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickColorView.swift; sourceTree = "<group>"; };
+		4672AB7C28347DE800ACB775 /* 105407-rocketship-smoke-trail.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "105407-rocketship-smoke-trail.json"; sourceTree = "<group>"; };
+		467D66412834949200D764DF /* MenuPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPicker.swift; sourceTree = "<group>"; };
 		467FB86428338BC20067FBE8 /* AlertVC+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlertVC+.swift"; sourceTree = "<group>"; };
-		467FB866283392B80067FBE8 /* 91956-work-from-home.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "91956-work-from-home.json"; sourceTree = "<group>"; };
 		467FB868283393B50067FBE8 /* TextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField+.swift"; sourceTree = "<group>"; };
+		46B3AEC228362D6C00EF0E65 /* LottieAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieAnimationView.swift; sourceTree = "<group>"; };
+		46B3AEC428362FDB00EF0E65 /* 61224-beer-can.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "61224-beer-can.json"; sourceTree = "<group>"; };
+		46B3AEC62836340600EF0E65 /* 72515-graduation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "72515-graduation.json"; sourceTree = "<group>"; };
+		46B3AEC82836340600EF0E65 /* 83304-birthday-flutterflow-branded.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "83304-birthday-flutterflow-branded.json"; sourceTree = "<group>"; };
+		46B3AECC2836436C00EF0E65 /* DateComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateComponent.swift; sourceTree = "<group>"; };
 		B4822606492F54586624B4DF /* Pods_TimeCounter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimeCounter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E38C410B283A14F300D4298A /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
+		E38C410F283A186800D4298A /* TodoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoView.swift; sourceTree = "<group>"; };
+		E38C4111283A187D00D4298A /* TodoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewModel.swift; sourceTree = "<group>"; };
 		F4D563EB90B4CC5AE4E965D7 /* Pods-TimeCounter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeCounter.debug.xcconfig"; path = "Target Support Files/Pods-TimeCounter/Pods-TimeCounter.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,11 +132,10 @@
 				4642BC2F28337ABC0073162A /* Info.plist */,
 				4642BBFE283342080073162A /* TimeCounterApp.swift */,
 				4642BC00283342080073162A /* ContentView.swift */,
-				4642BC242833748E0073162A /* TimerView.swift */,
+				4666B65228349B4C00A5C65E /* View */,
 				4642BC15283344900073162A /* Extension */,
 				4642BC19283346650073162A /* Help */,
 				4642BC12283344470073162A /* Lottie Source */,
-				4642BC0C2833434A0073162A /* Lottie */,
 				4642BC022833420C0073162A /* Assets.xcassets */,
 				4642BC1E283348F00073162A /* Font */,
 				4642BC042833420C0073162A /* Preview Content */,
@@ -122,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				4642BC0D283343610073162A /* LottieView.swift */,
+				46B3AEC228362D6C00EF0E65 /* LottieAnimationView.swift */,
 			);
 			path = Lottie;
 			sourceTree = "<group>";
@@ -129,8 +163,13 @@
 		4642BC12283344470073162A /* Lottie Source */ = {
 			isa = PBXGroup;
 			children = (
+				46B3AEC62836340600EF0E65 /* 72515-graduation.json */,
+				46B3AEC82836340600EF0E65 /* 83304-birthday-flutterflow-branded.json */,
+				46B3AEC428362FDB00EF0E65 /* 61224-beer-can.json */,
+				4672AB7C28347DE800ACB775 /* 105407-rocketship-smoke-trail.json */,
+				460AD9FF2835D1F70069C15F /* 105599-moody-dog.json */,
 				4642BC32283386AC0073162A /* 87082-love-heart.json */,
-				467FB866283392B80067FBE8 /* 91956-work-from-home.json */,
+				460ADA032835D2190069C15F /* 105188-berry-the-old-man.json */,
 				4642BC132833445E0073162A /* 105000-tourist-enjoying-the-walk.json */,
 			);
 			path = "Lottie Source";
@@ -149,8 +188,10 @@
 			isa = PBXGroup;
 			children = (
 				4642BC1A283346950073162A /* Palette Color .swift */,
+				460ADA072835D2AE0069C15F /* LottieImage.swift */,
 				4642BC3028337B3B0073162A /* Fonts.swift */,
 				467FB86428338BC20067FBE8 /* AlertVC+.swift */,
+				467D66412834949200D764DF /* MenuPicker.swift */,
 			);
 			path = Help;
 			sourceTree = "<group>";
@@ -166,6 +207,46 @@
 			path = Font;
 			sourceTree = "<group>";
 		};
+		465B3DDC28378026004FB66A /* NoteApp */ = {
+			isa = PBXGroup;
+			children = (
+				E38C4108283A146000D4298A /* TodoView */,
+				465B3DDD28378035004FB66A /* NoteAppView.swift */,
+			);
+			path = NoteApp;
+			sourceTree = "<group>";
+		};
+		4666B65228349B4C00A5C65E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				465B3DDC28378026004FB66A /* NoteApp */,
+				4666B65328349B5200A5C65E /* TDetailView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4666B65328349B5200A5C65E /* TDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				4666B65428349B7500A5C65E /* TDetailView.swift */,
+				4666B65628349BB800A5C65E /* TDetailViewModel.swift */,
+				46B3AECC2836436C00EF0E65 /* DateComponent.swift */,
+				4642BC242833748E0073162A /* TimerView.swift */,
+				4642BC0C2833434A0073162A /* Lottie */,
+				4666B6582834A3B100A5C65E /* PickColorView */,
+			);
+			path = TDetailView;
+			sourceTree = "<group>";
+		};
+		4666B6582834A3B100A5C65E /* PickColorView */ = {
+			isa = PBXGroup;
+			children = (
+				4666B6592834A3C600A5C65E /* PickColorView.swift */,
+				460AD9FB2835D08F0069C15F /* PickAnimationView.swift */,
+			);
+			path = PickColorView;
+			sourceTree = "<group>";
+		};
 		50C7EF7655EDE69303E5B99F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +254,16 @@
 				2E02234BF57B9E3D3EFDE0BE /* Pods-TimeCounter.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		E38C4108283A146000D4298A /* TodoView */ = {
+			isa = PBXGroup;
+			children = (
+				E38C410F283A186800D4298A /* TodoView.swift */,
+				E38C4111283A187D00D4298A /* TodoViewModel.swift */,
+				E38C410B283A14F300D4298A /* TaskModel.swift */,
+			);
+			path = TodoView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,15 +326,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46B3AEC528362FDB00EF0E65 /* 61224-beer-can.json in Resources */,
 				4642BC062833420C0073162A /* Preview Assets.xcassets in Resources */,
 				4642BC2C28337A110073162A /* Technology-BoldItalic.ttf in Resources */,
 				4642BC33283386AD0073162A /* 87082-love-heart.json in Resources */,
 				4642BC2A28337A110073162A /* Technology-Bold.ttf in Resources */,
-				467FB867283392B80067FBE8 /* 91956-work-from-home.json in Resources */,
 				4642BC032833420C0073162A /* Assets.xcassets in Resources */,
 				4642BC142833445F0073162A /* 105000-tourist-enjoying-the-walk.json in Resources */,
+				4672AB7D28347DE800ACB775 /* 105407-rocketship-smoke-trail.json in Resources */,
+				46B3AEC92836340600EF0E65 /* 72515-graduation.json in Resources */,
+				460ADA002835D1F70069C15F /* 105599-moody-dog.json in Resources */,
 				4642BC2D28337A110073162A /* Technology.ttf in Resources */,
+				460ADA042835D2190069C15F /* 105188-berry-the-old-man.json in Resources */,
 				4642BC2B28337A110073162A /* Technology-Italic.ttf in Resources */,
+				46B3AECB2836340600EF0E65 /* 83304-birthday-flutterflow-branded.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,13 +392,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E38C410C283A14F300D4298A /* TaskModel.swift in Sources */,
+				46B3AEC328362D6C00EF0E65 /* LottieAnimationView.swift in Sources */,
+				E38C4110283A186900D4298A /* TodoView.swift in Sources */,
+				4666B65728349BB800A5C65E /* TDetailViewModel.swift in Sources */,
 				4642BC3128337B3B0073162A /* Fonts.swift in Sources */,
+				467D66422834949200D764DF /* MenuPicker.swift in Sources */,
+				465B3DDE28378035004FB66A /* NoteAppView.swift in Sources */,
 				467FB869283393B50067FBE8 /* TextField+.swift in Sources */,
 				4642BC252833748E0073162A /* TimerView.swift in Sources */,
 				4642BC01283342080073162A /* ContentView.swift in Sources */,
+				460AD9FC2835D08F0069C15F /* PickAnimationView.swift in Sources */,
 				4642BC1B283346950073162A /* Palette Color .swift in Sources */,
+				E38C4112283A187D00D4298A /* TodoViewModel.swift in Sources */,
 				4642BBFF283342080073162A /* TimeCounterApp.swift in Sources */,
+				4666B65A2834A3C600A5C65E /* PickColorView.swift in Sources */,
+				460ADA082835D2AE0069C15F /* LottieImage.swift in Sources */,
 				467FB86528338BC20067FBE8 /* AlertVC+.swift in Sources */,
+				4666B65528349B7500A5C65E /* TDetailView.swift in Sources */,
+				46B3AECD2836436C00EF0E65 /* DateComponent.swift in Sources */,
 				4642BC0E283343610073162A /* LottieView.swift in Sources */,
 				4642BC18283345740073162A /* Color+extension.swift in Sources */,
 			);
@@ -345,6 +453,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -406,6 +515,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
