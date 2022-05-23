@@ -207,6 +207,7 @@ struct TimerView: View {
                         .background {
                             RoundedRectangle(cornerRadius: 7)
                                 .fill(.ultraThinMaterial)
+                                .opacity(isExpand ? 1 : buttonOpacity)
                         }
                         .padding(.bottom)
                     }

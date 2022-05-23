@@ -7,25 +7,78 @@
 
 import SwiftUI
 
+let buttonOpacity: CGFloat = 0.2
+
 struct TDetailView: View {
     @ObservedObject var viewModel = TDetailViewModel()
-    @ObservedObject var dateComponent = DateComponent()
     @State private var pickDate = Date()
     @State private var title = "Work From Home"
     @State private var changeTitle = false
+    @State private var isShowNote = false
+    @State private var isShowNoti = false
     
+    @State private var textTitle = ""
+    @State private var des = ""
     var body: some View {
         ZStack {
             Color(hex: viewModel.backgroundColor)
                 .ignoresSafeArea()
             
-            // lack reload animation when reload view
-            LottieView(name: viewModel.currentAnimation,
-                       lastName: viewModel.lastAnimation,
-                       loopMode: .playOnce)
-                .frame(height: 400)
-                .offset(x: 75, y: -50)
-                .scaleEffect(1)
+            GeometryReader { proxy in
+                VStack(alignment: .trailing) {
+                    Spacer().frame(height: proxy.size.height / 10 * 2)
+                    LottieView(name: viewModel.currentAnimation,
+                               lastName: viewModel.lastAnimation,
+                               loopMode: .playOnce)
+                    .frame(height: proxy.size.height / 2)
+                    .offset(x: 75, y: -10)
+                    .scaleEffect(1.1)
+                    .padding(.bottom, 0)
+                    
+                    HStack {
+                        Button {
+                            withAnimation(.easeInOut) {
+                                isShowNote = true
+                            }
+                        } label: {
+                            Image(systemName: "square.and.pencil")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 20, height: 20)
+                                .padding(8)
+                                .background {
+                                    RoundedRectangle(cornerRadius: 7)
+                                        .fill(.ultraThinMaterial)
+                                        .opacity(buttonOpacity)
+                                }
+                                .padding(.bottom)
+                        }
+                        .sheet(isPresented: $isShowNote) {
+                            ToDoView()
+                        }
+                        
+                        Button {
+                            withAnimation {
+                                isShowNoti = true
+                            }
+                        } label: {
+                            Image(systemName: "bell.circle")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 20, height: 20)
+                                .padding(8)
+                                .background {
+                                    RoundedRectangle(cornerRadius: 7)
+                                        .fill(.ultraThinMaterial)
+                                        .opacity(buttonOpacity)
+                                }
+                                .padding(.bottom)
+                        }
+                    }
+                    .frame(alignment: .trailing)
+                    .offset(y: -70)
+                }
+            }
             
             VStack(alignment: .leading) {
                 Spacer().frame(height: 40)
@@ -68,14 +121,14 @@ struct TDetailView: View {
                             .background {
                                 RoundedRectangle(cornerRadius: 10)
                                     .fill(.ultraThinMaterial)
-                                    .opacity(0.2)
+                                    .opacity(buttonOpacity)
                             }
                     }
                     
                     DatePicker(selection: $pickDate, displayedComponents: [.date, .hourAndMinute]) {}
-                    .labelsHidden()
-                    .colorScheme(.light)
-                    .colorInvert()
+                        .labelsHidden()
+                        .colorScheme(.light)
+                        .colorInvert()
                 }
                 .padding(.top, -15)
                 .padding(.bottom, 0)
@@ -90,10 +143,10 @@ struct TDetailView: View {
                 }
                 .padding(.vertical, 0)
                 
-                TimerView(dateComponent: dateComponent,
+                TimerView(dateComponent: viewModel.dateComponent,
                           referenceDate: pickDate,
                           countkind: viewModel.currentKindCount)
-                    .padding(.top, 0)
+                .padding(.top, 0)
                 Spacer()
             }
             .padding(.leading, 30)
@@ -119,6 +172,10 @@ struct TDetailView: View {
             }
             .padding(.leading, 20)
         }
+        // trick to reload animation when change slide
+        .onAppear(perform: {
+            viewModel.lastAnimation = "trick to reload animation when change slide"
+        })
         .foregroundColor(Color(hex: viewModel.textCorlor))
     }
 }

@@ -8,8 +8,8 @@
 import Foundation
 
 class DateComponent: ObservableObject {
-    @Published var isYear = false
-    @Published var isMonth = false
+    @Published var isYear = true
+    @Published var isMonth = true
     @Published var isDay = true
     @Published var isHour = false
     @Published var isMin = false

@@ -28,10 +28,8 @@ struct PickColorView: View {
                 HStack(alignment: .center){
                     if isExpand {
                         Image(systemName: "chevron.forward")
-                            .foregroundColor(Color(hex: Palette.gray))
                     } else {
                         Image(systemName: "chevron.backward")
-                            .foregroundColor(Color(hex: Palette.gray))
                     }
                     
                     if isText {
@@ -87,6 +85,7 @@ struct PickColorView: View {
             .background {
                 RoundedRectangle(cornerRadius: CGFloat(10))
                     .fill(.ultraThinMaterial)
+                    .opacity(buttonOpacity)
             }
             
         }
