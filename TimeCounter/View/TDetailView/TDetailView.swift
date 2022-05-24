@@ -11,6 +11,7 @@ let buttonOpacity: CGFloat = 0.2
 
 struct TDetailView: View {
     @ObservedObject var viewModel = TDetailViewModel()
+    @StateObject var todoViewModel = TodoViewModel()
     @State private var pickDate = Date()
     @State private var title = "Work From Home"
     @State private var changeTitle = false
@@ -25,7 +26,7 @@ struct TDetailView: View {
                 .ignoresSafeArea()
             
             GeometryReader { proxy in
-                VStack(alignment: .trailing) {
+                VStack(alignment: .leading) {
                     Spacer().frame(height: proxy.size.height / 10 * 2)
                     LottieView(name: viewModel.currentAnimation,
                                lastName: viewModel.lastAnimation,
@@ -33,39 +34,45 @@ struct TDetailView: View {
                     .frame(height: proxy.size.height / 2)
                     .offset(x: 75, y: -10)
                     .scaleEffect(1.1)
-                    .padding(.bottom, 0)
+                    .padding(.bottom, -70)
                     
-                    HStack {
-                        Button {
-                            withAnimation(.easeInOut) {
-                                isShowNote = true
+                    VStack {
+                        HStack {
+                            Button {
+                                withAnimation(.easeInOut) {
+                                    isShowNote = true
+                                }
+                            } label: {
+                                HStack {
+                                    Image(systemName: "square.and.pencil")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 20, height: 20)
+                                    Spacer().frame(width: 8)
+                                    Image(systemName: "bell.circle")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 20, height: 20)
+                                }
+                                .padding(8)
+                                .background {
+                                    RoundedRectangle(cornerRadius: 7)
+                                        .fill(.ultraThinMaterial)
+                                        .opacity(buttonOpacity)
+                                }
                             }
-                        } label: {
-                            HStack {
-                                Image(systemName: "square.and.pencil")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 20, height: 20)
-                                Spacer().frame(width: 8)
-                                Image(systemName: "bell.circle")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 20, height: 20)
-                            }
-                            .padding(8)
-                            .background {
-                                RoundedRectangle(cornerRadius: 7)
-                                    .fill(.ultraThinMaterial)
-                                    .opacity(buttonOpacity)
+                            .sheet(isPresented: $isShowNote) {
+                                ToDoView(viewModel: todoViewModel)
                             }
                         }
-                        .sheet(isPresented: $isShowNote) {
-                            ToDoView()
-                        }
+                        .frame(maxWidth: .infinity ,alignment: .trailing)
+                                                
+                        TakeNoteView(viewModel: todoViewModel)
+                            .padding(.leading, -10)
                     }
-                    .frame(alignment: .trailing)
-                    .offset(y: -70)
+                    .padding(.horizontal)
                 }
+                .padding()
             }
             
             VStack(alignment: .leading) {
@@ -122,43 +129,21 @@ struct TDetailView: View {
                 .padding(.top, -15)
                 .padding(.bottom, 0)
                 
-                HStack {
-                    RoundedRectangle(cornerRadius: 7)
-                        .frame(width: 50, height: 0.5)
-                    Spacer()
-                    RoundedRectangle(cornerRadius: 7)
-                        .frame(width: 150, height: 1)
-                    Spacer()
-                }
-                .padding(.vertical, 0)
+                dividedView
                 
-                TimerView(dateComponent: viewModel.dateComponent,
+                TimerView(dateComponent: viewModel.dateComponents,
                           referenceDate: pickDate,
                           countkind: viewModel.currentKindCount)
                 .padding(.top, 0)
+                .onChange(of: viewModel.dateComponents.count) { newValue in
+                    print(newValue)
+                }
                 Spacer()
             }
             .padding(.leading, 30)
             .frame(maxWidth: .infinity ,alignment: .leading)
             
-            VStack(alignment: .trailing) {
-                Spacer()
-                PickColorView(isText: true) { value in
-                    viewModel.textCorlor = value
-                }
-                
-                PickColorView { value in
-                    viewModel.backgroundColor = value
-                }
-                
-                PickAnimationView { value in
-                    guard viewModel.currentAnimation != value else {
-                        return
-                    }
-                    viewModel.lastAnimation = viewModel.currentAnimation
-                    viewModel.currentAnimation = value
-                }
-            }
+            toolView
             .padding(.leading, 20)
         }
         // trick to reload animation when change slide
@@ -166,6 +151,41 @@ struct TDetailView: View {
             viewModel.lastAnimation = "trick to reload animation when change slide"
         })
         .foregroundColor(Color(hex: viewModel.textCorlor))
+    }
+    
+    @ViewBuilder
+    var dividedView: some View {
+        HStack {
+            RoundedRectangle(cornerRadius: 7)
+                .frame(width: 50, height: 0.5)
+            Spacer()
+            RoundedRectangle(cornerRadius: 7)
+                .frame(width: 150, height: 1)
+            Spacer()
+        }
+        .padding(.vertical, 0)
+    }
+    
+    @ViewBuilder
+    var toolView: some View {
+        VStack(alignment: .trailing) {
+            Spacer()
+            PickColorView(isText: true) { value in
+                viewModel.textCorlor = value
+            }
+            
+            PickColorView { value in
+                viewModel.backgroundColor = value
+            }
+            
+            PickAnimationView { value in
+                guard viewModel.currentAnimation != value else {
+                    return
+                }
+                viewModel.lastAnimation = viewModel.currentAnimation
+                viewModel.currentAnimation = value
+            }
+        }
     }
 }
 

@@ -11,6 +11,10 @@ import SwiftUI
 struct ToDoView: View {
     @ObservedObject var viewModel = TodoViewModel()
     
+    init(viewModel: TodoViewModel) {
+        self.viewModel = viewModel
+    }
+    
     var body: some View {
         NavigationView {
             VStack(spacing: 15) {
