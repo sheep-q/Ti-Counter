@@ -12,6 +12,7 @@
 		460ADA002835D1F70069C15F /* 105599-moody-dog.json in Resources */ = {isa = PBXBuildFile; fileRef = 460AD9FF2835D1F70069C15F /* 105599-moody-dog.json */; };
 		460ADA042835D2190069C15F /* 105188-berry-the-old-man.json in Resources */ = {isa = PBXBuildFile; fileRef = 460ADA032835D2190069C15F /* 105188-berry-the-old-man.json */; };
 		460ADA082835D2AE0069C15F /* LottieImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460ADA072835D2AE0069C15F /* LottieImage.swift */; };
+		46172481283C6E5900E8E219 /* TakeNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46172480283C6E5900E8E219 /* TakeNoteView.swift */; };
 		4642BBFF283342080073162A /* TimeCounterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4642BBFE283342080073162A /* TimeCounterApp.swift */; };
 		4642BC01283342080073162A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4642BC00283342080073162A /* ContentView.swift */; };
 		4642BC032833420C0073162A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4642BC022833420C0073162A /* Assets.xcassets */; };
@@ -51,6 +52,7 @@
 		460AD9FF2835D1F70069C15F /* 105599-moody-dog.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "105599-moody-dog.json"; sourceTree = "<group>"; };
 		460ADA032835D2190069C15F /* 105188-berry-the-old-man.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "105188-berry-the-old-man.json"; sourceTree = "<group>"; };
 		460ADA072835D2AE0069C15F /* LottieImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieImage.swift; sourceTree = "<group>"; };
+		46172480283C6E5900E8E219 /* TakeNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeNoteView.swift; sourceTree = "<group>"; };
 		4642BBFB283342080073162A /* TimeCounter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeCounter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4642BBFE283342080073162A /* TimeCounterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeCounterApp.swift; sourceTree = "<group>"; };
 		4642BC00283342080073162A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -106,6 +108,14 @@
 				B4822606492F54586624B4DF /* Pods_TimeCounter.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4617247F283C6E3E00E8E219 /* TakeNoteView */ = {
+			isa = PBXGroup;
+			children = (
+				46172480283C6E5900E8E219 /* TakeNoteView.swift */,
+			);
+			path = TakeNoteView;
 			sourceTree = "<group>";
 		};
 		4642BBF2283342080073162A = {
@@ -232,6 +242,7 @@
 				4666B65628349BB800A5C65E /* TDetailViewModel.swift */,
 				46B3AECC2836436C00EF0E65 /* DateComponent.swift */,
 				4642BC242833748E0073162A /* TimerView.swift */,
+				4617247F283C6E3E00E8E219 /* TakeNoteView */,
 				4642BC0C2833434A0073162A /* Lottie */,
 				4666B6582834A3B100A5C65E /* PickColorView */,
 			);
@@ -395,6 +406,7 @@
 				E38C410C283A14F300D4298A /* TaskModel.swift in Sources */,
 				46B3AEC328362D6C00EF0E65 /* LottieAnimationView.swift in Sources */,
 				E38C4110283A186900D4298A /* TodoView.swift in Sources */,
+				46172481283C6E5900E8E219 /* TakeNoteView.swift in Sources */,
 				4666B65728349BB800A5C65E /* TDetailViewModel.swift in Sources */,
 				4642BC3128337B3B0073162A /* Fonts.swift in Sources */,
 				467D66422834949200D764DF /* MenuPicker.swift in Sources */,
