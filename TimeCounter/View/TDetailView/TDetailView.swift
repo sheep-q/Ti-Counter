@@ -13,66 +13,87 @@ struct TDetailView: View {
     @ObservedObject var viewModel = TDetailViewModel()
     @StateObject var todoViewModel = TodoViewModel()
     @State private var pickDate = Date()
-    @State private var title = "Work From Home"
     @State private var changeTitle = false
     @State private var isShowNote = false
     @State private var isShowNoti = false
     
     @State private var textTitle = ""
     @State private var des = ""
+    
+    @State private var image = UIImage()
+    @State private var isShowImageSheet = false
+    @State private var isChooseImage = false
+    
+    init (viewModel: TDetailViewModel) {
+        self.viewModel = viewModel
+    }
     var body: some View {
         ZStack {
             Color(hex: viewModel.backgroundColor)
                 .ignoresSafeArea()
             
             GeometryReader { proxy in
-                VStack(alignment: .leading) {
-                    Spacer().frame(height: proxy.size.height / 10 * 2)
-                    LottieView(name: viewModel.currentAnimation,
-                               lastName: viewModel.lastAnimation,
-                               loopMode: .playOnce)
-                    .frame(height: proxy.size.height / 2)
-                    .offset(x: 75, y: -10)
-                    .scaleEffect(1.1)
-                    .padding(.bottom, -70)
-                    
-                    VStack {
-                        HStack {
-                            Button {
-                                withAnimation(.easeInOut) {
-                                    isShowNote = true
-                                }
-                            } label: {
-                                HStack {
-                                    Image(systemName: "square.and.pencil")
-                                        .resizable()
-                                        .scaledToFit()
-                                        .frame(width: 20, height: 20)
-                                    Spacer().frame(width: 8)
-                                    Image(systemName: "bell.circle")
-                                        .resizable()
-                                        .scaledToFit()
-                                        .frame(width: 20, height: 20)
-                                }
-                                .padding(8)
-                                .background {
-                                    RoundedRectangle(cornerRadius: 7)
-                                        .fill(.ultraThinMaterial)
-                                        .opacity(buttonOpacity)
-                                }
-                            }
-                            .sheet(isPresented: $isShowNote) {
-                                ToDoView(viewModel: todoViewModel)
-                            }
-                        }
-                        .frame(maxWidth: .infinity ,alignment: .trailing)
-                                                
-                        TakeNoteView(viewModel: todoViewModel)
-                            .padding(.leading, -10)
+                ZStack {
+                    HStack {
+                        Spacer()
+                        
+                        Image(uiImage: self.image)
+                            .resizable()
+                            .cornerRadius(20)
+                            .frame(width: proxy.size.width / 2, height: proxy.size.width / 2)
+                            .background(Color.black.opacity(0.2))
+                            .aspectRatio(contentMode: .fill)
+                            .clipShape(RoundedRectangle(cornerRadius: 20))
+                            .padding(.trailing, 35)
+                            .offset(y: -25)
                     }
-                    .padding(.horizontal)
+                    
+                    VStack(alignment: .leading) {
+                        Spacer().frame(height: proxy.size.height / 10 * 2)
+                        LottieView(name: viewModel.currentAnimation,
+                                   lastName: viewModel.lastAnimation,
+                                   loopMode: .playOnce)
+                        .frame(height: proxy.size.height / 2)
+                        .offset(x: 75, y: -10)
+                        .scaleEffect(1.1)
+                        .padding(.bottom, -70)
+                        
+                        VStack {
+                            HStack {
+                                Button {
+                                    isShowNote = true
+                                } label: {
+                                    HStack {
+                                        Image(systemName: "square.and.pencil")
+                                            .resizable()
+                                            .scaledToFit()
+                                            .frame(width: 20, height: 20)
+                                        Spacer().frame(width: 8)
+                                        Image(systemName: "bell.circle")
+                                            .resizable()
+                                            .scaledToFit()
+                                            .frame(width: 20, height: 20)
+                                    }
+                                    .padding(8)
+                                    .background {
+                                        RoundedRectangle(cornerRadius: 7)
+                                            .fill(.ultraThinMaterial)
+                                            .opacity(buttonOpacity)
+                                    }
+                                }
+                                .sheet(isPresented: $isShowNote) {
+                                    ToDoView(viewModel: todoViewModel)
+                                }
+                            }
+                            .frame(maxWidth: .infinity ,alignment: .trailing)
+                                                    
+                            TakeNoteView(viewModel: todoViewModel)
+                                .padding(.trailing, 30)
+                        }
+                    }
+                    .padding()
                 }
-                .padding()
+                
             }
             
             VStack(alignment: .leading) {
@@ -131,13 +152,44 @@ struct TDetailView: View {
                 
                 dividedView
                 
-                TimerView(dateComponent: viewModel.dateComponents,
-                          referenceDate: pickDate,
-                          countkind: viewModel.currentKindCount)
-                .padding(.top, 0)
-                .onChange(of: viewModel.dateComponents.count) { newValue in
-                    print(newValue)
+                HStack(alignment: .top) {
+                    TimerView(dateComponent: viewModel.dateComponents,
+                              referenceDate: pickDate,
+                              countkind: viewModel.currentKindCount)
+                    .padding(.top, 0)
+                    .onChange(of: viewModel.dateComponents.count) { newValue in
+                        print(newValue)
+                    }
+                    
+                    Spacer()
+                    
+                    Button {
+                        isShowImageSheet = true
+                    } label: {
+                        HStack {
+                            Image(systemName: "photo.fill")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 20, height: 20)
+                        }
+                        .padding(8)
+                        .background {
+                            RoundedRectangle(cornerRadius: 7)
+                                .fill(.ultraThinMaterial)
+                                .opacity(buttonOpacity)
+                        }
+                    }
+                    .padding(.trailing, 15)
+                    .sheet(isPresented: $isShowImageSheet) {
+                        // dismiss
+                        isChooseImage = true
+                        viewModel.lastAnimation = "trick to reload animation when change slide"
+                    } content: {
+                        ImagePicker(sourceType: .photoLibrary, selectedImage: self.$image)
+                    }
+
                 }
+                
                 Spacer()
             }
             .padding(.leading, 30)
@@ -145,6 +197,7 @@ struct TDetailView: View {
             
             toolView
             .padding(.leading, 20)
+            .padding(.bottom, 20)
         }
         // trick to reload animation when change slide
         .onAppear(perform: {
@@ -170,15 +223,22 @@ struct TDetailView: View {
     var toolView: some View {
         VStack(alignment: .trailing) {
             Spacer()
-            PickColorView(isText: true) { value in
+            PickColorView(isText: true,
+                          currentColor: viewModel.backgroundColor,
+                          currentTextColor: viewModel.textCorlor
+            ) { value in
                 viewModel.textCorlor = value
             }
             
-            PickColorView { value in
+            PickColorView(
+                isText: false,
+                currentColor: viewModel.backgroundColor,
+                currentTextColor: viewModel.textCorlor
+            ) { value in
                 viewModel.backgroundColor = value
             }
             
-            PickAnimationView { value in
+            PickAnimationView(currenAnimation: viewModel.currentAnimation) { value in
                 guard viewModel.currentAnimation != value else {
                     return
                 }
@@ -191,6 +251,6 @@ struct TDetailView: View {
 
 struct TDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        TDetailView()
+        TDetailView(viewModel: TDetailViewModel())
     }
 }

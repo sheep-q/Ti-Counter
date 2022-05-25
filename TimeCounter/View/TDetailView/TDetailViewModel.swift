@@ -16,11 +16,18 @@ enum CountKinds: String {
 class TDetailViewModel: ObservableObject {
     @Published var dateComponents = DateComponent()
     @Published var currentKindCount: CountKinds = .default
-    @Published var title: String = "Work From Home"
-    @Published var backgroundColor = Palette.colorArray.first ?? "000000"
-    @Published var textCorlor = Palette.textColor.first ?? "FFFFFF"
-    @Published var currentAnimation = LottieImage.data.first ?? "87082-love-heart"
-    @Published var lastAnimation = ""
+    @Published var title: String
+    @Published var backgroundColor: String
+    @Published var textCorlor: String
+    @Published var currentAnimation: String
+    @Published var lastAnimation: String = ""
+    
+    init(title: String = "Work From Home", backgroundColor: String = Palette.colorArray.first ?? "000000", textColor: String = Palette.textColor.first ?? "FFFFFF", currentAnimation: String = LottieImage.data.first ?? "87082-love-heart") {
+        self.title = title
+        self.backgroundColor = backgroundColor
+        self.textCorlor = textColor
+        self.currentAnimation = currentAnimation
+    }
     
     func increaseKind() {
         currentKindCount = CountKinds.increase

@@ -10,16 +10,20 @@ import SwiftUI
 struct PickColorView: View {
     
     @State var isExpand = false
-    @State var currentColor = Palette.colorArray.first!
-    @State var currenTextColor = Palette.textColor.first!
+    @State var currentColor: String
+    @State var currenTextColor: String
     
     var isText = false
     let onchange: (_ value: String) -> Void
     
     init(isText: Bool = false,
+         currentColor: String,
+         currentTextColor: String,
          onchange: @escaping(_ value: String) -> Void
     ) {
         self.isText = isText
+        self.currentColor = currentColor
+        self.currenTextColor = currentTextColor
         self.onchange = onchange
     }
     var body: some View {
@@ -96,7 +100,10 @@ struct PickColorView: View {
 
 struct PickColorView_Previews: PreviewProvider {
     static var previews: some View {
-        PickColorView(isText: true) { _ in }
+        PickColorView(isText: true,
+                      currentColor: "",
+                      currentTextColor: ""
+        ) { _ in }
         .background(.pink)
     }
 }
