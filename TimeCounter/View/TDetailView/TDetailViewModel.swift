@@ -8,7 +8,7 @@
 import Foundation
 
 enum CountKinds: String {
-    case `default` = "Kind of Count"
+    case `default` = "Kinds"
     case increase = "Count from"
     case down = "Count down"
 }

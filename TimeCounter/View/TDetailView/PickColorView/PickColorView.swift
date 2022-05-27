@@ -94,7 +94,6 @@ struct PickColorView: View {
             
         }
         .frame(alignment: .trailing)
-        .padding(.trailing, 10)
     }
 }
 

@@ -31,6 +31,7 @@ struct ContentView: View {
             )
         }
         .tabViewStyle(.page(indexDisplayMode: .always))
+        .background(.black)
         .ignoresSafeArea()
     }
 }
