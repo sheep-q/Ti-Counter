@@ -13,6 +13,7 @@ struct ToDoView: View {
     
     init(viewModel: TodoViewModel) {
         self.viewModel = viewModel
+        viewModel.setupNotifications()
     }
     
     var body: some View {
@@ -96,7 +97,12 @@ struct ToDoView: View {
                             .frame(maxWidth: .infinity, alignment: .trailing)
                         }
                     }
+                    .onMove(perform: viewModel.move)
                     .onDelete(perform: viewModel.deleteTask)
+                }
+                .toolbar {
+                    EditButton()
+                        .foregroundColor(.black.opacity(0.7))
                 }
                 .listStyle(PlainListStyle())
                 

@@ -13,7 +13,11 @@ struct PickAnimationView: View {
     
     let onchange: (_ value: String) -> Void
     
-    init(onchange: @escaping(_ value: String) -> Void) {
+    init(
+        currenAnimation: String,
+        onchange: @escaping(_ value: String) -> Void
+    ) {
+        self.currentAnimation = currenAnimation
         self.onchange = onchange
     }
     var body: some View {
@@ -70,12 +74,11 @@ struct PickAnimationView: View {
             
         }
         .frame(maxWidth: .infinity, alignment: .trailing)
-        .padding(.trailing, 10)
     }
 }
 
 struct PickAnimationView_Previews: PreviewProvider {
     static var previews: some View {
-        PickAnimationView { _ in }
+        PickAnimationView(currenAnimation: "") { _ in }
     }
 }

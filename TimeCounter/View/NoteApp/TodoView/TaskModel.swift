@@ -22,7 +22,7 @@ class TaskModel: ObservableObject, Identifiable {
     
     var dateNotiString: String {
         dateFormatter.dateFormat = "MMM d yyyy, h:mm a"
-        return dateFormatter.string(from: dateCreated)
+        return dateFormatter.string(from: notiDate)
     }
     
     init(title: String, priority: String, notiDate: Date = Date(), isNoti: Bool = false) {
