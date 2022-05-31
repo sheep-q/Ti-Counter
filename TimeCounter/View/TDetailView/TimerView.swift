@@ -100,7 +100,6 @@ struct TimerView: View {
                             VStack {
                                 Button {
                                     dateComponent.isYear.toggle()
-                                    dateComponent.countComponents()
                                 } label: {
                                     HStack {
                                         Text("Year")
@@ -113,7 +112,6 @@ struct TimerView: View {
                                 Divider()
                                 Button {
                                     dateComponent.isMonth.toggle()
-                                    dateComponent.countComponents()
                                 } label: {
                                     HStack {
                                         Text("Month")
@@ -126,7 +124,6 @@ struct TimerView: View {
                                 Divider()
                                 Button {
                                     dateComponent.isDay.toggle()
-                                    dateComponent.countComponents()
                                 } label: {
                                     HStack {
                                         Text("Day")
@@ -141,7 +138,6 @@ struct TimerView: View {
                             VStack {
                                 Button {
                                     dateComponent.isHour.toggle()
-                                    dateComponent.countComponents()
                                 } label: {
                                     HStack {
                                         Text("Hour")
@@ -154,7 +150,6 @@ struct TimerView: View {
                                 Divider()
                                 Button {
                                     dateComponent.isMin.toggle()
-                                    dateComponent.countComponents()
                                 } label: {
                                     HStack {
                                         Text("Minutes")
@@ -167,7 +162,6 @@ struct TimerView: View {
                                 Divider()
                                 Button {
                                     dateComponent.isSecond.toggle()
-                                    dateComponent.countComponents()
                                 } label: {
                                     HStack {
                                         Text("Second")

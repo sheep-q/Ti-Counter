@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import Swift
 
 enum Priority: String, Identifiable, CaseIterable {
     
@@ -33,7 +34,22 @@ extension Priority {
     }
 }
 
-class TodoViewModel: ObservableObject {
+class TodoViewModel: ObservableObject, Codable {
+    
+    enum CodingKeys: CodingKey {
+        case allTask
+    }
+    
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        allTasks = try container.decode([TaskModel].self, forKey: .allTask)
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(allTasks, forKey: .allTask)
+    }
+    
     @Published var allTasks = [TaskModel]()
     @Published var title: String = ""
     @Published var selectedPriority: Priority = .medium

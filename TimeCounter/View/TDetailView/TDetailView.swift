@@ -11,18 +11,13 @@ let buttonOpacity: CGFloat = 0.2
 
 struct TDetailView: View {
     @ObservedObject var viewModel = TDetailViewModel()
-    @StateObject var todoViewModel = TodoViewModel()
     @State private var pickDate = Date()
     @State private var changeTitle = false
     @State private var isShowNote = false
-    @State private var isShowNoti = false
-    
-    @State private var textTitle = ""
-    @State private var des = ""
-    
     @State private var image = UIImage()
     @State private var isShowImageSheet = false
     @State private var isChooseImage = false
+    @State private var title = ""
     
     init (viewModel: TDetailViewModel) {
         self.viewModel = viewModel
@@ -51,7 +46,7 @@ struct TDetailView: View {
                     // Lottie animation View + Take note View
                     VStack(alignment: .leading) {
                         headerView
-                            .padding(.bottom)
+                            .padding(.bottom, proxy.size.height > 680 ? 45 : 15)
                         
                         ZStack(alignment: .top) {
                             LottieView(name: viewModel.currentAnimation,
@@ -66,9 +61,6 @@ struct TDetailView: View {
                                 TimerView(dateComponent: viewModel.dateComponents,
                                           referenceDate: pickDate,
                                           countkind: viewModel.currentKindCount)
-                                .onChange(of: viewModel.dateComponents.count) { newValue in
-                                    print(newValue)
-                                }
                                 .padding(.bottom, 10)
                                 
                                 Spacer()
@@ -126,12 +118,12 @@ struct TDetailView: View {
                                     }
                                 }
                                 .sheet(isPresented: $isShowNote) {
-                                    ToDoView(viewModel: todoViewModel)
+                                    ToDoView(viewModel: viewModel.todoViewModel)
                                 }
                             }
                             .frame(maxWidth: .infinity ,alignment: .trailing)
                             
-                            TakeNoteView(viewModel: todoViewModel)
+                            TakeNoteView(viewModel: viewModel.todoViewModel)
                                 .padding(.leading, -15)
                                 .padding(.trailing, 30)
                         }

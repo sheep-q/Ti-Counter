@@ -9,30 +9,66 @@ import SwiftUI
 
 struct ContentView: View {
     
+    private var key = "dataUserDefault"
+    @State var dataList: [TDetailViewModel]
+    
+    init() {
+        var data = [TDetailViewModel]()
+        
+        do {
+            let value = try UserDefaults.standard.getObject(forKey: key, castTo: [TDetailViewModel].self)
+            data = value
+        } catch {
+            print(error.localizedDescription)
+        }
+        self.dataList = data
+    }
+    
     var body: some View {
         TabView {
-            TDetailView(
-                viewModel: TDetailViewModel(title: "Orthodontics",
-                                            backgroundColor: Palette.colorArray.first!,
-                                            textColor: Palette.textColor.first!,
-                                            currentAnimation: LottieImage.data.randomElement() ?? "")
-            )
-            TDetailView(
-                viewModel: TDetailViewModel(title: "TiEmEo",
-                                            backgroundColor: Palette.colorArray[5],
-                                            textColor: Palette.textColor.first!,
-                                            currentAnimation: LottieImage.data.first!)
-            )
-            TDetailView(
-                viewModel: TDetailViewModel(title: "Fitness",
-                                            backgroundColor: Palette.colorArray[8],
-                                            textColor: Palette.textColor.first!,
-                                            currentAnimation: LottieImage.data[3])
-            )
+            ForEach (dataList) { data in
+                TDetailView(viewModel: data)
+            }
         }
         .tabViewStyle(.page(indexDisplayMode: .always))
         .background(.black)
         .ignoresSafeArea()
+        .onDisappear {
+            saveUserDefaultData()
+        }
+    }
+    
+    func saveUserDefaultData() {
+        do {
+            UserDefaults.standard.removeObject(forKey: key)
+            try UserDefaults.standard.setObject(dataList, forKey: key)
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+    }
+    
+    func saveMoc() {
+        var data = [TDetailViewModel]()
+        
+        data.append(TDetailViewModel(title: "Orthodontics",
+                                     backgroundColor: Palette.colorArray.first!,
+                                     textColor: Palette.textColor.first!,
+                                     currentAnimation: LottieImage.data.randomElement() ?? ""))
+        data.append(TDetailViewModel(title: "TiEmEo",
+                                     backgroundColor: Palette.colorArray[5],
+                                     textColor: Palette.textColor.first!,
+                                     currentAnimation: LottieImage.data.first!))
+
+        data.append(TDetailViewModel(title: "Fitness",
+                                                backgroundColor: Palette.colorArray[8],
+                                                textColor: Palette.textColor.first!,
+                                                currentAnimation: LottieImage.data[3]))
+        do {
+            try UserDefaults.standard.setObject(data, forKey: key)
+        } catch {
+            print(error.localizedDescription)
+        }
     }
 }
 

@@ -30,7 +30,6 @@
 		4642BC2D28337A110073162A /* Technology.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4642BC2928337A110073162A /* Technology.ttf */; };
 		4642BC3128337B3B0073162A /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4642BC3028337B3B0073162A /* Fonts.swift */; };
 		4642BC33283386AD0073162A /* 87082-love-heart.json in Resources */ = {isa = PBXBuildFile; fileRef = 4642BC32283386AC0073162A /* 87082-love-heart.json */; };
-		465B3DDE28378035004FB66A /* NoteAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465B3DDD28378035004FB66A /* NoteAppView.swift */; };
 		4666B65528349B7500A5C65E /* TDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4666B65428349B7500A5C65E /* TDetailView.swift */; };
 		4666B65728349BB800A5C65E /* TDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4666B65628349BB800A5C65E /* TDetailViewModel.swift */; };
 		4666B65A2834A3C600A5C65E /* PickColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4666B6592834A3C600A5C65E /* PickColorView.swift */; };
@@ -43,6 +42,7 @@
 		46B3AEC92836340600EF0E65 /* 72515-graduation.json in Resources */ = {isa = PBXBuildFile; fileRef = 46B3AEC62836340600EF0E65 /* 72515-graduation.json */; };
 		46B3AECB2836340600EF0E65 /* 83304-birthday-flutterflow-branded.json in Resources */ = {isa = PBXBuildFile; fileRef = 46B3AEC82836340600EF0E65 /* 83304-birthday-flutterflow-branded.json */; };
 		46B3AECD2836436C00EF0E65 /* DateComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B3AECC2836436C00EF0E65 /* DateComponent.swift */; };
+		46B730F028475254009B05A2 /* UserDefault+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B730EF28475254009B05A2 /* UserDefault+.swift */; };
 		E38C410C283A14F300D4298A /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38C410B283A14F300D4298A /* TaskModel.swift */; };
 		E38C4110283A186900D4298A /* TodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38C410F283A186800D4298A /* TodoView.swift */; };
 		E38C4112283A187D00D4298A /* TodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38C4111283A187D00D4298A /* TodoViewModel.swift */; };
@@ -74,7 +74,6 @@
 		4642BC2F28337ABC0073162A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		4642BC3028337B3B0073162A /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		4642BC32283386AC0073162A /* 87082-love-heart.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "87082-love-heart.json"; sourceTree = "<group>"; };
-		465B3DDD28378035004FB66A /* NoteAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteAppView.swift; sourceTree = "<group>"; };
 		4666B65428349B7500A5C65E /* TDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDetailView.swift; sourceTree = "<group>"; };
 		4666B65628349BB800A5C65E /* TDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDetailViewModel.swift; sourceTree = "<group>"; };
 		4666B6592834A3C600A5C65E /* PickColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickColorView.swift; sourceTree = "<group>"; };
@@ -87,6 +86,7 @@
 		46B3AEC62836340600EF0E65 /* 72515-graduation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "72515-graduation.json"; sourceTree = "<group>"; };
 		46B3AEC82836340600EF0E65 /* 83304-birthday-flutterflow-branded.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "83304-birthday-flutterflow-branded.json"; sourceTree = "<group>"; };
 		46B3AECC2836436C00EF0E65 /* DateComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateComponent.swift; sourceTree = "<group>"; };
+		46B730EF28475254009B05A2 /* UserDefault+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefault+.swift"; sourceTree = "<group>"; };
 		B4822606492F54586624B4DF /* Pods_TimeCounter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimeCounter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E38C410B283A14F300D4298A /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		E38C410F283A186800D4298A /* TodoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoView.swift; sourceTree = "<group>"; };
@@ -211,6 +211,7 @@
 			children = (
 				4642BC1A283346950073162A /* Palette Color .swift */,
 				460ADA072835D2AE0069C15F /* LottieImage.swift */,
+				46B730EF28475254009B05A2 /* UserDefault+.swift */,
 				4642BC3028337B3B0073162A /* Fonts.swift */,
 				467FB86428338BC20067FBE8 /* AlertVC+.swift */,
 				467D66412834949200D764DF /* MenuPicker.swift */,
@@ -235,7 +236,6 @@
 			isa = PBXGroup;
 			children = (
 				E38C4108283A146000D4298A /* TodoView */,
-				465B3DDD28378035004FB66A /* NoteAppView.swift */,
 			);
 			path = NoteApp;
 			sourceTree = "<group>";
@@ -421,10 +421,10 @@
 				46B3AEC328362D6C00EF0E65 /* LottieAnimationView.swift in Sources */,
 				E38C4110283A186900D4298A /* TodoView.swift in Sources */,
 				46172481283C6E5900E8E219 /* TakeNoteView.swift in Sources */,
+				46B730F028475254009B05A2 /* UserDefault+.swift in Sources */,
 				4666B65728349BB800A5C65E /* TDetailViewModel.swift in Sources */,
 				4642BC3128337B3B0073162A /* Fonts.swift in Sources */,
 				467D66422834949200D764DF /* MenuPicker.swift in Sources */,
-				465B3DDE28378035004FB66A /* NoteAppView.swift in Sources */,
 				467FB869283393B50067FBE8 /* TextField+.swift in Sources */,
 				4642BC252833748E0073162A /* TimerView.swift in Sources */,
 				4642BC01283342080073162A /* ContentView.swift in Sources */,
