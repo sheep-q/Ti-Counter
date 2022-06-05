@@ -7,7 +7,7 @@
 
 import Foundation
 
-class DateComponent: ObservableObject {
+class DateComponent: ObservableObject, Codable {
     @Published var isYear = true
     @Published var isMonth = true
     @Published var isDay = true
@@ -15,10 +15,36 @@ class DateComponent: ObservableObject {
     @Published var isMin = false
     @Published var isSecond = false
     
-    @Published var count: Int = 3
+    enum CodingKeys: CodingKey {
+        case isYear
+        case isMonth
+        case isDay
+        case isHour
+        case isMin
+        case isSecond
+    }
     
-    func countComponents(){
-        count = (isYear ? 1 : 0) + (isMonth ? 1 : 0) + (isDay ? 1 : 0) + (isHour ? 1 : 0) + (isMin ? 1 : 0) + (isSecond ? 1 : 0)
-        self.objectWillChange.send()
+    init() {
+        
+    }
+    
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        isYear = try container.decode(Bool.self, forKey: .isYear)
+        isMonth = try container.decode(Bool.self, forKey: .isMonth)
+        isDay = try container.decode(Bool.self, forKey: .isDay)
+        isHour = try container.decode(Bool.self, forKey: .isHour)
+        isMin = try container.decode(Bool.self, forKey: .isMin)
+        isSecond = try container.decode(Bool.self, forKey: .isSecond)
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(isYear, forKey: .isYear)
+        try container.encode(isMonth, forKey: .isMonth)
+        try container.encode(isDay, forKey: .isDay)
+        try container.encode(isHour, forKey: .isHour)
+        try container.encode(isMin, forKey: .isMin)
+        try container.encode(isSecond, forKey: .isSecond)
     }
 }
