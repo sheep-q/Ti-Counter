@@ -33,6 +33,9 @@ struct ContentView: View {
         .tabViewStyle(.page(indexDisplayMode: .always))
         .background(.black)
         .ignoresSafeArea()
+        .onAppear {
+            dataList = getMockData()
+        }
         .onDisappear {
             saveUserDefaultData()
         }
@@ -46,6 +49,25 @@ struct ContentView: View {
             print(error.localizedDescription)
         }
         
+    }
+    
+    private func getMockData() -> [TDetailViewModel] {
+        var data = [TDetailViewModel]()
+        
+        data.append(TDetailViewModel(title: "Orthodontics",
+                                     backgroundColor: Palette.colorArray.first!,
+                                     textColor: Palette.textColor.first!,
+                                     currentAnimation: LottieImage.data.randomElement() ?? ""))
+        data.append(TDetailViewModel(title: "TiEmEo",
+                                     backgroundColor: Palette.colorArray[5],
+                                     textColor: Palette.textColor.first!,
+                                     currentAnimation: LottieImage.data.first!))
+
+        data.append(TDetailViewModel(title: "Fitness",
+                                                backgroundColor: Palette.colorArray[8],
+                                                textColor: Palette.textColor.first!,
+                                                currentAnimation: LottieImage.data[3]))
+        return data
     }
     
     func saveMoc() {

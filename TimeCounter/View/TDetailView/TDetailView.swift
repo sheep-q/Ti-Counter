@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Lottie
 
 let buttonOpacity: CGFloat = 0.2
 
@@ -49,9 +50,9 @@ struct TDetailView: View {
                             .padding(.bottom, proxy.size.height > 680 ? 45 : 15)
                         
                         ZStack(alignment: .top) {
-                            LottieView(name: viewModel.currentAnimation,
-                                       lastName: viewModel.lastAnimation,
-                                       loopMode: .playOnce)
+                            LottieView(animation: .named(viewModel.currentAnimation))
+                                .playing(loopMode: .loop)
+                            
                             .frame(height: proxy.size.height / 2)
                             .offset(x: proxy.size.width / 8, y: -proxy.size.width / 8)
                             .scaleEffect(1.2)

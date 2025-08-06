@@ -8,7 +8,6 @@
 import Foundation
 import SwiftUI
 
-@available (iOS 14.0, *)
 public struct MenuPicker<T, V: View>: View {
     
     @Binding var selected: Int
