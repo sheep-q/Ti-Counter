@@ -89,7 +89,7 @@ struct PickColorView: View {
             .background {
                 RoundedRectangle(cornerRadius: CGFloat(10))
                     .fill(.ultraThinMaterial)
-                    .opacity(buttonOpacity)
+                    .opacity(0.2)
             }
             
         }

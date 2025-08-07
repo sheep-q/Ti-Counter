@@ -207,7 +207,7 @@ struct TimerView: View {
                         .background {
                             RoundedRectangle(cornerRadius: 7)
                                 .fill(.ultraThinMaterial)
-                                .opacity(isExpand ? 1 : buttonOpacity)
+                                .opacity(isExpand ? 1 : 0.2)
                         }
                         .padding(.bottom)
                     }
@@ -244,7 +244,15 @@ struct TimerView: View {
         return set
     }
 
-    func countString(from date: Date, year: Bool = false, month: Bool = false, day: Bool = false, hour: Bool = false, min: Bool = false, second: Bool = false) -> String {
+    func countString(
+        from date: Date,
+        year: Bool = false,
+        month: Bool = false,
+        day: Bool = false,
+        hour: Bool = false,
+        min: Bool = false,
+        second: Bool = false
+    ) -> String {
         let calendar = Calendar(identifier: .gregorian)
         var components = calendar
             .dateComponents(dateComponentSet(),

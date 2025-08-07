@@ -41,6 +41,8 @@
 		46B3AECD2836436C00EF0E65 /* DateComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B3AECC2836436C00EF0E65 /* DateComponent.swift */; };
 		46B730F028475254009B05A2 /* UserDefault+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B730EF28475254009B05A2 /* UserDefault+.swift */; };
 		E351958F2E44BC7500E9DA40 /* CounterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E351958E2E44BC7200E9DA40 /* CounterModel.swift */; };
+		E35195962E4504DA00E9DA40 /* CounterHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35195952E4504D400E9DA40 /* CounterHeaderView.swift */; };
+		E35195982E4506F800E9DA40 /* DeviceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35195972E4506F100E9DA40 /* DeviceHelper.swift */; };
 		E38C410C283A14F300D4298A /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38C410B283A14F300D4298A /* TaskModel.swift */; };
 		E38C4110283A186900D4298A /* TodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38C410F283A186800D4298A /* TodoView.swift */; };
 		E38C4112283A187D00D4298A /* TodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38C4111283A187D00D4298A /* TodoViewModel.swift */; };
@@ -84,6 +86,8 @@
 		46B3AECC2836436C00EF0E65 /* DateComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateComponent.swift; sourceTree = "<group>"; };
 		46B730EF28475254009B05A2 /* UserDefault+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefault+.swift"; sourceTree = "<group>"; };
 		E351958E2E44BC7200E9DA40 /* CounterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterModel.swift; sourceTree = "<group>"; };
+		E35195952E4504D400E9DA40 /* CounterHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterHeaderView.swift; sourceTree = "<group>"; };
+		E35195972E4506F100E9DA40 /* DeviceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceHelper.swift; sourceTree = "<group>"; };
 		E38C410B283A14F300D4298A /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		E38C410F283A186800D4298A /* TodoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoView.swift; sourceTree = "<group>"; };
 		E38C4111283A187D00D4298A /* TodoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewModel.swift; sourceTree = "<group>"; };
@@ -190,6 +194,7 @@
 				46B730EF28475254009B05A2 /* UserDefault+.swift */,
 				4642BC3028337B3B0073162A /* Fonts.swift */,
 				467FB86428338BC20067FBE8 /* AlertVC+.swift */,
+				E35195972E4506F100E9DA40 /* DeviceHelper.swift */,
 				467D66412834949200D764DF /* MenuPicker.swift */,
 				4629F98C283E2DE200BD45B5 /* ImagePicker.swift */,
 				4629F989283E004C00BD45B5 /* NotificationManager */,
@@ -229,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				4666B65428349B7500A5C65E /* TDetailView.swift */,
+				E35195952E4504D400E9DA40 /* CounterHeaderView.swift */,
 				4666B65628349BB800A5C65E /* TDetailViewModel.swift */,
 				E351958E2E44BC7200E9DA40 /* CounterModel.swift */,
 				46B3AECC2836436C00EF0E65 /* DateComponent.swift */,
@@ -365,6 +371,8 @@
 				46B3AECD2836436C00EF0E65 /* DateComponent.swift in Sources */,
 				4629F98D283E2DE200BD45B5 /* ImagePicker.swift in Sources */,
 				4642BC18283345740073162A /* Color+extension.swift in Sources */,
+				E35195982E4506F800E9DA40 /* DeviceHelper.swift in Sources */,
+				E35195962E4504DA00E9DA40 /* CounterHeaderView.swift in Sources */,
 				4629F98B283E006A00BD45B5 /* NotificationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
