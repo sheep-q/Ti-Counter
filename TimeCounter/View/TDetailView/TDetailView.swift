@@ -25,7 +25,7 @@ struct TDetailView: View {
     }
     var body: some View {
         ZStack {
-            Color(hex: viewModel.backgroundColor)
+            Color(hex: viewModel.counter.backgroundColor)
                 .ignoresSafeArea()
             
             GeometryReader { proxy in
@@ -50,7 +50,7 @@ struct TDetailView: View {
                             .padding(.bottom, proxy.size.height > 680 ? 45 : 15)
                         
                         ZStack(alignment: .top) {
-                            LottieView(animation: .named(viewModel.currentAnimation))
+                            LottieView(animation: .named(viewModel.counter.currentAnimation))
                                 .playing(loopMode: .loop)
                             
                             .frame(height: proxy.size.height / 2)
@@ -59,9 +59,9 @@ struct TDetailView: View {
                             .padding(.bottom, 0)
                             
                             HStack(alignment: .top) {
-                                TimerView(dateComponent: viewModel.dateComponents,
+                                TimerView(dateComponent: viewModel.counter.dateComponents,
                                           referenceDate: pickDate,
-                                          countkind: viewModel.currentKindCount)
+                                          countkind: viewModel.counter.currentKindCount)
                                 .padding(.bottom, 10)
                                 
                                 Spacer()
@@ -84,7 +84,7 @@ struct TDetailView: View {
                                 .sheet(isPresented: $isShowImageSheet) {
                                     // dismiss
                                     isChooseImage = true
-                                    viewModel.lastAnimation = "trick to reload animation when change slide"
+                                    viewModel.counter.lastAnimation = "trick to reload animation when change slide"
                                 } content: {
                                     ImagePicker(sourceType: .photoLibrary, selectedImage: self.$image)
                                 }
@@ -119,12 +119,12 @@ struct TDetailView: View {
                                     }
                                 }
                                 .sheet(isPresented: $isShowNote) {
-                                    ToDoView(viewModel: viewModel.todoViewModel)
+                                    ToDoView(viewModel: viewModel.counter.todoViewModel)
                                 }
                             }
                             .frame(maxWidth: .infinity ,alignment: .trailing)
                             
-                            TakeNoteView(viewModel: viewModel.todoViewModel)
+                            TakeNoteView(viewModel: viewModel.counter.todoViewModel)
                                 .padding(.leading, -15)
                                 .padding(.trailing, 30)
                         }
@@ -145,9 +145,9 @@ struct TDetailView: View {
         }
         // trick to reload animation when change slide
         .onAppear(perform: {
-            viewModel.lastAnimation = "trick to reload animation when change slide"
+            viewModel.counter.lastAnimation = "trick to reload animation when change slide"
         })
-        .foregroundColor(Color(hex: viewModel.textCorlor))
+        .foregroundColor(Color(hex: viewModel.counter.textCorlor))
     }
     
     @ViewBuilder
@@ -168,7 +168,7 @@ struct TDetailView: View {
                 }
                 
                 if changeTitle {
-                    TextField("Title of Ti-Count", text: $viewModel.title)
+                    TextField("Title of Ti-Count", text: $viewModel.counter.title)
                         .multilineTextAlignment(.leading)
                         .font(.system(size: 40))
                         .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -176,7 +176,7 @@ struct TDetailView: View {
                         .background(.clear)
                         .frame(maxWidth: 250, alignment: .leading)
                 } else {
-                    Text(viewModel.title)
+                    Text(viewModel.counter.title)
                         .font(.system(size: 40))
                         .fontWeight(.semibold)
                         .lineLimit(2)
@@ -189,7 +189,7 @@ struct TDetailView: View {
                     Button(CountKinds.increase.rawValue, action: viewModel.increaseKind)
                     Button(CountKinds.down.rawValue, action: viewModel.downKind)
                 } label: {
-                    Text(viewModel.currentKindCount.rawValue)
+                    Text(viewModel.counter.currentKindCount.rawValue)
                         .font(.body)
                         .padding(7)
                         .background {
@@ -229,26 +229,26 @@ struct TDetailView: View {
     var toolView: some View {
         VStack(alignment: .trailing) {
             PickColorView(isText: true,
-                          currentColor: viewModel.backgroundColor,
-                          currentTextColor: viewModel.textCorlor
+                          currentColor: viewModel.counter.backgroundColor,
+                          currentTextColor: viewModel.counter.textCorlor
             ) { value in
-                viewModel.textCorlor = value
+                viewModel.counter.textCorlor = value
             }
             
             PickColorView(
                 isText: false,
-                currentColor: viewModel.backgroundColor,
-                currentTextColor: viewModel.textCorlor
+                currentColor: viewModel.counter.backgroundColor,
+                currentTextColor: viewModel.counter.textCorlor
             ) { value in
-                viewModel.backgroundColor = value
+                viewModel.counter.backgroundColor = value
             }
             
-            PickAnimationView(currenAnimation: viewModel.currentAnimation) { value in
-                guard viewModel.currentAnimation != value else {
+            PickAnimationView(currenAnimation: viewModel.counter.currentAnimation) { value in
+                guard viewModel.counter.currentAnimation != value else {
                     return
                 }
-                viewModel.lastAnimation = viewModel.currentAnimation
-                viewModel.currentAnimation = value
+                viewModel.counter.lastAnimation = viewModel.counter.currentAnimation
+                viewModel.counter.currentAnimation = value
             }
         }
     }

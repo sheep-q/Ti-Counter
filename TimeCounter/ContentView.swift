@@ -10,13 +10,13 @@ import SwiftUI
 struct ContentView: View {
     
     private var key = "dataUserDefault"
-    @State var dataList: [TDetailViewModel]
+    @State var dataList: [CounterModel]
     
     init() {
-        var data = [TDetailViewModel]()
+        var data = [CounterModel]()
         
         do {
-            let value = try UserDefaults.standard.getObject(forKey: key, castTo: [TDetailViewModel].self)
+            let value = try UserDefaults.standard.getObject(forKey: key, castTo: [CounterModel].self)
             data = value
         } catch {
             print(error.localizedDescription)
@@ -27,7 +27,7 @@ struct ContentView: View {
     var body: some View {
         TabView {
             ForEach (dataList) { data in
-                TDetailView(viewModel: data)
+                TDetailView(viewModel: TDetailViewModel(counterModel: data))
             }
         }
         .tabViewStyle(.page(indexDisplayMode: .always))
@@ -51,41 +51,37 @@ struct ContentView: View {
         
     }
     
-    private func getMockData() -> [TDetailViewModel] {
-        var data = [TDetailViewModel]()
-        
-        data.append(TDetailViewModel(title: "Orthodontics",
-                                     backgroundColor: Palette.colorArray.first!,
-                                     textColor: Palette.textColor.first!,
-                                     currentAnimation: LottieImage.data.randomElement() ?? ""))
-        data.append(TDetailViewModel(title: "TiEmEo",
-                                     backgroundColor: Palette.colorArray[5],
-                                     textColor: Palette.textColor.first!,
-                                     currentAnimation: LottieImage.data.first!))
-
-        data.append(TDetailViewModel(title: "Fitness",
-                                                backgroundColor: Palette.colorArray[8],
-                                                textColor: Palette.textColor.first!,
-                                                currentAnimation: LottieImage.data[3]))
+    private func getMockData() -> [CounterModel] {
+        var data = [CounterModel]()
+        data.append(CounterModel(title: "Orthodontics",
+                                 backgroundColor: Palette.colorArray.first!,
+                                 textColor: Palette.textColor.first!,
+                                 currentAnimation: LottieImage.data.randomElement() ?? ""))
+        data.append(CounterModel(title: "TiEmEo",
+                                 backgroundColor: Palette.colorArray[5],
+                                 textColor: Palette.textColor.first!,
+                                 currentAnimation: LottieImage.data.first!))
+        data.append(CounterModel(title: "Fitness",
+                                 backgroundColor: Palette.colorArray[8],
+                                 textColor: Palette.textColor.first!,
+                                 currentAnimation: LottieImage.data[3]))
         return data
     }
     
     func saveMoc() {
-        var data = [TDetailViewModel]()
-        
-        data.append(TDetailViewModel(title: "Orthodontics",
-                                     backgroundColor: Palette.colorArray.first!,
-                                     textColor: Palette.textColor.first!,
-                                     currentAnimation: LottieImage.data.randomElement() ?? ""))
-        data.append(TDetailViewModel(title: "TiEmEo",
-                                     backgroundColor: Palette.colorArray[5],
-                                     textColor: Palette.textColor.first!,
-                                     currentAnimation: LottieImage.data.first!))
-
-        data.append(TDetailViewModel(title: "Fitness",
-                                                backgroundColor: Palette.colorArray[8],
-                                                textColor: Palette.textColor.first!,
-                                                currentAnimation: LottieImage.data[3]))
+        var data = [CounterModel]()
+        data.append(CounterModel(title: "Orthodontics",
+                                 backgroundColor: Palette.colorArray.first!,
+                                 textColor: Palette.textColor.first!,
+                                 currentAnimation: LottieImage.data.randomElement() ?? ""))
+        data.append(CounterModel(title: "TiEmEo",
+                                 backgroundColor: Palette.colorArray[5],
+                                 textColor: Palette.textColor.first!,
+                                 currentAnimation: LottieImage.data.first!))
+        data.append(CounterModel(title: "Fitness",
+                                 backgroundColor: Palette.colorArray[8],
+                                 textColor: Palette.textColor.first!,
+                                 currentAnimation: LottieImage.data[3]))
         do {
             try UserDefaults.standard.setObject(data, forKey: key)
         } catch {

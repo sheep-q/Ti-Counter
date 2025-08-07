@@ -40,6 +40,7 @@
 		46B3AECB2836340600EF0E65 /* 83304-birthday-flutterflow-branded.json in Resources */ = {isa = PBXBuildFile; fileRef = 46B3AEC82836340600EF0E65 /* 83304-birthday-flutterflow-branded.json */; };
 		46B3AECD2836436C00EF0E65 /* DateComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B3AECC2836436C00EF0E65 /* DateComponent.swift */; };
 		46B730F028475254009B05A2 /* UserDefault+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B730EF28475254009B05A2 /* UserDefault+.swift */; };
+		E351958F2E44BC7500E9DA40 /* CounterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E351958E2E44BC7200E9DA40 /* CounterModel.swift */; };
 		E38C410C283A14F300D4298A /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38C410B283A14F300D4298A /* TaskModel.swift */; };
 		E38C4110283A186900D4298A /* TodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38C410F283A186800D4298A /* TodoView.swift */; };
 		E38C4112283A187D00D4298A /* TodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38C4111283A187D00D4298A /* TodoViewModel.swift */; };
@@ -82,6 +83,7 @@
 		46B3AEC82836340600EF0E65 /* 83304-birthday-flutterflow-branded.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "83304-birthday-flutterflow-branded.json"; sourceTree = "<group>"; };
 		46B3AECC2836436C00EF0E65 /* DateComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateComponent.swift; sourceTree = "<group>"; };
 		46B730EF28475254009B05A2 /* UserDefault+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefault+.swift"; sourceTree = "<group>"; };
+		E351958E2E44BC7200E9DA40 /* CounterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterModel.swift; sourceTree = "<group>"; };
 		E38C410B283A14F300D4298A /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		E38C410F283A186800D4298A /* TodoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoView.swift; sourceTree = "<group>"; };
 		E38C4111283A187D00D4298A /* TodoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewModel.swift; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 			children = (
 				4666B65428349B7500A5C65E /* TDetailView.swift */,
 				4666B65628349BB800A5C65E /* TDetailViewModel.swift */,
+				E351958E2E44BC7200E9DA40 /* CounterModel.swift */,
 				46B3AECC2836436C00EF0E65 /* DateComponent.swift */,
 				4642BC242833748E0073162A /* TimerView.swift */,
 				4617247F283C6E3E00E8E219 /* TakeNoteView */,
@@ -348,6 +351,7 @@
 				4642BC3128337B3B0073162A /* Fonts.swift in Sources */,
 				467D66422834949200D764DF /* MenuPicker.swift in Sources */,
 				467FB869283393B50067FBE8 /* TextField+.swift in Sources */,
+				E351958F2E44BC7500E9DA40 /* CounterModel.swift in Sources */,
 				4642BC252833748E0073162A /* TimerView.swift in Sources */,
 				4642BC01283342080073162A /* ContentView.swift in Sources */,
 				460AD9FC2835D08F0069C15F /* PickAnimationView.swift in Sources */,
