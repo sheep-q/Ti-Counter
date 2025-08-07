@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PickAnimationView: View {
     @State var isExpand = false
-    @State var currentAnimation = LottieImage.data.first!
+    @State var lottieImage = LottieImage.data.first!
     
     let onchange: (_ value: String) -> Void
     
@@ -17,7 +17,7 @@ struct PickAnimationView: View {
         currenAnimation: String,
         onchange: @escaping(_ value: String) -> Void
     ) {
-        self.currentAnimation = currenAnimation
+        self.lottieImage = currenAnimation
         self.onchange = onchange
     }
     var body: some View {
@@ -30,7 +30,7 @@ struct PickAnimationView: View {
                         Image(systemName: "chevron.backward")
                     }
                     
-                    Image(currentAnimation)
+                    Image(lottieImage)
                         .resizable()
                         .scaledToFit()
                         .cornerRadius(10)
@@ -57,7 +57,7 @@ struct PickAnimationView: View {
                                     .cornerRadius(10)
                                     .frame(width: 50, height: 50)
                                     .onTapGesture {
-                                        currentAnimation = LottieImage.data[index]
+                                        lottieImage = LottieImage.data[index]
                                         onchange(LottieImage.data[index])
                                     }
                             }

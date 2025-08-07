@@ -20,8 +20,7 @@ class CounterModel: Codable, Identifiable {
     var title: String
     var backgroundColor: String
     var textCorlor: String
-    var currentAnimation: String
-    var lastAnimation: String = ""
+    var lottieImage: String
     
     enum CodingKeys: CodingKey {
         case dateComponents
@@ -30,8 +29,7 @@ class CounterModel: Codable, Identifiable {
         case title
         case backgroundColor
         case textCorlor
-        case currentAnimation
-        case lastAnimation
+        case lottieImage
     }
     
     required init(from decoder: Decoder) throws {
@@ -42,8 +40,7 @@ class CounterModel: Codable, Identifiable {
         title = try container.decode(String.self, forKey: .title)
         backgroundColor = try container.decode(String.self, forKey: .backgroundColor)
         textCorlor = try container.decode(String.self, forKey: .textCorlor)
-        currentAnimation = try container.decode(String.self, forKey: .currentAnimation)
-        lastAnimation = try container.decode(String.self, forKey: .lastAnimation)
+        lottieImage = try container.decode(String.self, forKey: .lottieImage)
     }
     
     func encode(to encoder: Encoder) throws {
@@ -54,14 +51,18 @@ class CounterModel: Codable, Identifiable {
         try container.encode(title, forKey: .title)
         try container.encode(backgroundColor, forKey: .backgroundColor)
         try container.encode(textCorlor, forKey: .textCorlor)
-        try container.encode(currentAnimation, forKey: .currentAnimation)
-        try container.encode(lastAnimation, forKey: .lastAnimation)
+        try container.encode(lottieImage, forKey: .lottieImage)
     }
     
-    init(title: String = "Work From Home", backgroundColor: String = Palette.colorArray.first ?? "000000", textColor: String = Palette.textColor.first ?? "FFFFFF", currentAnimation: String = LottieImage.data.first ?? "87082-love-heart") {
+    init(
+        title: String = "Work From Home",
+        backgroundColor: String = Palette.colorArray.first ?? "000000",
+        textColor: String = Palette.textColor.first ?? "FFFFFF",
+        lottieImage: String = LottieImage.data.first ?? "87082-love-heart"
+    ) {
         self.title = title
         self.backgroundColor = backgroundColor
         self.textCorlor = textColor
-        self.currentAnimation = currentAnimation
+        self.lottieImage = lottieImage
     }
 }

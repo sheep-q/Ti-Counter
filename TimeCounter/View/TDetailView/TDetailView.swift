@@ -50,7 +50,7 @@ struct TDetailView: View {
                             .padding(.bottom, proxy.size.height > 680 ? 45 : 15)
                         
                         ZStack(alignment: .top) {
-                            LottieView(animation: .named(viewModel.counter.currentAnimation))
+                            LottieView(animation: .named(viewModel.counter.lottieImage))
                                 .playing(loopMode: .loop)
                             
                             .frame(height: proxy.size.height / 2)
@@ -84,7 +84,6 @@ struct TDetailView: View {
                                 .sheet(isPresented: $isShowImageSheet) {
                                     // dismiss
                                     isChooseImage = true
-                                    viewModel.counter.lastAnimation = "trick to reload animation when change slide"
                                 } content: {
                                     ImagePicker(sourceType: .photoLibrary, selectedImage: self.$image)
                                 }
@@ -143,10 +142,6 @@ struct TDetailView: View {
                 .padding(.trailing, 15)
             }
         }
-        // trick to reload animation when change slide
-        .onAppear(perform: {
-            viewModel.counter.lastAnimation = "trick to reload animation when change slide"
-        })
         .foregroundColor(Color(hex: viewModel.counter.textCorlor))
     }
     
@@ -243,12 +238,11 @@ struct TDetailView: View {
                 viewModel.counter.backgroundColor = value
             }
             
-            PickAnimationView(currenAnimation: viewModel.counter.currentAnimation) { value in
-                guard viewModel.counter.currentAnimation != value else {
+            PickAnimationView(currenAnimation: viewModel.counter.lottieImage) { value in
+                guard viewModel.counter.lottieImage != value else {
                     return
                 }
-                viewModel.counter.lastAnimation = viewModel.counter.currentAnimation
-                viewModel.counter.currentAnimation = value
+                viewModel.counter.lottieImage = value
             }
         }
     }

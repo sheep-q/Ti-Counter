@@ -56,15 +56,15 @@ struct ContentView: View {
         data.append(CounterModel(title: "Orthodontics",
                                  backgroundColor: Palette.colorArray.first!,
                                  textColor: Palette.textColor.first!,
-                                 currentAnimation: LottieImage.data.randomElement() ?? ""))
+                                 lottieImage: LottieImage.data.randomElement() ?? ""))
         data.append(CounterModel(title: "TiEmEo",
                                  backgroundColor: Palette.colorArray[5],
                                  textColor: Palette.textColor.first!,
-                                 currentAnimation: LottieImage.data.first!))
+                                 lottieImage: LottieImage.data.first!))
         data.append(CounterModel(title: "Fitness",
                                  backgroundColor: Palette.colorArray[8],
                                  textColor: Palette.textColor.first!,
-                                 currentAnimation: LottieImage.data[3]))
+                                 lottieImage: LottieImage.data[3]))
         return data
     }
     
@@ -73,15 +73,15 @@ struct ContentView: View {
         data.append(CounterModel(title: "Orthodontics",
                                  backgroundColor: Palette.colorArray.first!,
                                  textColor: Palette.textColor.first!,
-                                 currentAnimation: LottieImage.data.randomElement() ?? ""))
+                                 lottieImage: LottieImage.data.randomElement() ?? ""))
         data.append(CounterModel(title: "TiEmEo",
                                  backgroundColor: Palette.colorArray[5],
                                  textColor: Palette.textColor.first!,
-                                 currentAnimation: LottieImage.data.first!))
+                                 lottieImage: LottieImage.data.first!))
         data.append(CounterModel(title: "Fitness",
                                  backgroundColor: Palette.colorArray[8],
                                  textColor: Palette.textColor.first!,
-                                 currentAnimation: LottieImage.data[3]))
+                                 lottieImage: LottieImage.data[3]))
         do {
             try UserDefaults.standard.setObject(data, forKey: key)
         } catch {
