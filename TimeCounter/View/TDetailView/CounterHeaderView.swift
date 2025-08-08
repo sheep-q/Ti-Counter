@@ -22,27 +22,34 @@ struct CounterHeaderView: View {
                 Button {
                     changeTitle.toggle()
                 } label: {
-                    Image(systemName: "pencil.circle.fill")
-                        .resizable()
-                        .scaledToFit()
-                        .foregroundStyle(.ultraThinMaterial)
-                        .frame(width: 20, height: 20)
+                    if !changeTitle {
+                        Image(systemName: "pencil.circle.fill")
+                            .resizable()
+                            .scaledToFit()
+                            .foregroundStyle(.ultraThinMaterial)
+                            .frame(width: 20, height: 20)
+                    } else {
+                        Text("Done")
+                            .font(.system(size: 20, weight: .semibold))
+                            .foregroundStyle(.tint)
+                    }
                 }
                 
                 if changeTitle {
-                    TextField("Title of Ti-Count", text: $viewModel.counter.title)
+                    TextField("Title", text: $viewModel.counter.title)
                         .multilineTextAlignment(.leading)
-                        .font(.system(size: 40))
+                        .font(.system(size: 32))
                         .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .foregroundColor(.gray)
+                        .foregroundColor(.black)
                         .background(.clear)
-                        .frame(maxWidth: 250, alignment: .leading)
+                        .padding(.vertical)
+                        .frame(maxWidth: .infinity, alignment: .leading)
                 } else {
                     Text(viewModel.counter.title)
                         .font(.system(size: 40))
                         .fontWeight(.semibold)
                         .lineLimit(2)
-                        .frame(maxWidth: 250, alignment: .leading)
+                        .frame(maxWidth: .infinity, alignment: .leading)
                 }
             }
             
@@ -63,8 +70,7 @@ struct CounterHeaderView: View {
                 
                 DatePicker(selection: $pickDate, displayedComponents: [.date, .hourAndMinute]) {}
                     .labelsHidden()
-                    .colorScheme(.light)
-                    .colorInvert()
+                    .colorScheme(.dark)
             }
             .padding(.top, -15)
             .padding(.bottom, 0)

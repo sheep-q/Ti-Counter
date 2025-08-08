@@ -16,6 +16,14 @@ struct PickColorView: View {
     var isText = false
     let onchange: (_ value: String) -> Void
     
+    var sizeOfText: CGFloat {
+        isExpand ? 35 : 25
+    }
+    
+    var sizeOfColor: CGFloat {
+        isExpand ? 45 : 35
+    }
+    
     init(isText: Bool = false,
          currentColor: String,
          currentTextColor: String,
@@ -38,12 +46,12 @@ struct PickColorView: View {
                     
                     if isText {
                         Text("A")
-                            .font(.system(size: 30).bold())
+                            .font(.system(size: sizeOfText).bold())
                             .foregroundColor(Color(hex: currenTextColor))
                     } else {
                         Circle()
                             .foregroundColor(Color(hex: currentColor))
-                            .frame(width: 40, height: 40)
+                            .frame(width: sizeOfColor, height: sizeOfColor)
                     }
                 }
                 .onTapGesture {
@@ -54,9 +62,7 @@ struct PickColorView: View {
                 
                 if isExpand {
                     Rectangle()
-                        .cornerRadius(10)
                         .frame(width: 1, height: 50)
-                        .foregroundColor(Color(hex: Palette.gray))
                     
                     ScrollView(.horizontal, showsIndicators: true) {
                         HStack {
@@ -64,7 +70,7 @@ struct PickColorView: View {
                                 ForEach(Palette.colorArray.indices, id: \.self) { index in
                                     Circle()
                                         .foregroundColor(Color(hex: Palette.colorArray[index]))
-                                        .frame(width: 40, height: 40)
+                                        .frame(width: sizeOfColor, height: sizeOfColor)
                                         .onTapGesture {
                                             onchange(Palette.colorArray[index])
                                             currentColor = Palette.colorArray[index]
@@ -73,7 +79,7 @@ struct PickColorView: View {
                             } else {
                                 ForEach(Palette.textColor.indices, id: \.self) { index in
                                     Text("A")
-                                        .font(.system(size: 30).bold())
+                                        .font(.system(size: sizeOfText).bold())
                                         .foregroundColor(Color(hex: Palette.textColor[index]))
                                         .onTapGesture {
                                             currenTextColor = Palette.textColor[index]
@@ -89,7 +95,6 @@ struct PickColorView: View {
             .background {
                 RoundedRectangle(cornerRadius: CGFloat(10))
                     .fill(.ultraThinMaterial)
-                    .opacity(0.2)
             }
             
         }

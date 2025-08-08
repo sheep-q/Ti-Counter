@@ -55,7 +55,7 @@ struct PickAnimationView: View {
                                     .resizable()
                                     .scaledToFit()
                                     .cornerRadius(10)
-                                    .frame(width: 50, height: 50)
+                                    .frame(width: 60, height: 60)
                                     .onTapGesture {
                                         lottieImage = LottieImage.data[index]
                                         onchange(LottieImage.data[index])
@@ -69,7 +69,6 @@ struct PickAnimationView: View {
             .background {
                 RoundedRectangle(cornerRadius: CGFloat(10))
                     .fill(.ultraThinMaterial)
-                    .opacity(0.2)
             }
             
         }
