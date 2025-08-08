@@ -33,17 +33,6 @@ struct CounterModel: Codable, Identifiable {
         case lottieImage
     }
     
-//    required init(from decoder: Decoder) throws {
-//        let container = try decoder.container(keyedBy: CodingKeys.self)
-//        dateComponents = try container.decode(DateComponent.self, forKey: .dateComponents)
-//        todoViewModel = try container.decode(TodoViewModel.self, forKey: .todoViewModel)
-//        currentKindCount = try container.decode(CountKinds.self, forKey: .currentKindCount)
-//        title = try container.decode(String.self, forKey: .title)
-//        backgroundColor = try container.decode(String.self, forKey: .backgroundColor)
-//        textCorlor = try container.decode(String.self, forKey: .textCorlor)
-//        lottieImage = try container.decode(String.self, forKey: .lottieImage)
-//    }
-    
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(dateComponents, forKey: .dateComponents)

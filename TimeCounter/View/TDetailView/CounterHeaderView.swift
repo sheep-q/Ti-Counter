@@ -14,7 +14,7 @@ struct CounterHeaderView: View {
     @State var changeTitle: Bool = false
     
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 6) {
             RoundedRectangle(cornerRadius: 7).frame(width: 100, height: 1)
                 .padding(.top, 5)
             
@@ -72,18 +72,16 @@ struct CounterHeaderView: View {
                     .labelsHidden()
                     .colorScheme(.dark)
             }
-            .padding(.top, -15)
-            .padding(.bottom, 0)
             
             HStack {
                 RoundedRectangle(cornerRadius: 7)
-                    .frame(width: 50, height: 0.5)
+                    .frame(width: 50, height: 1)
                 Spacer()
                 RoundedRectangle(cornerRadius: 7)
                     .frame(width: 150, height: 1)
                 Spacer()
             }
-            .padding(.vertical, 0)
+            .padding(.top, 6)
         }
         .frame(maxWidth: .infinity ,alignment: .leading)
     }
