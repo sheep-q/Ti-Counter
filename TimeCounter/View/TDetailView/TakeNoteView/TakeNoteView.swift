@@ -13,18 +13,14 @@ struct TakeNoteView: View {
     init(viewModel: TodoViewModel) {
         self.viewModel = viewModel
     }
+    
     var body: some View {
-        List {
-            ForEach(viewModel.allTasks) { task in
-                VStack {
-                    Text("• " + task.title)
-                        .multilineTextAlignment(.leading)
-                        .fixedSize(horizontal: false, vertical: true)
-                }
-                .listRowSeparator(.hidden)
+        ForEach(viewModel.allTasks) { task in
+            VStack(spacing: 10) {
+                Text("• " + task.title)
+                    .multilineTextAlignment(.leading)
+                    .fixedSize(horizontal: false, vertical: true)
             }
-            .listRowBackground(Color.clear)
         }
-        .listStyle(PlainListStyle())
     }
 }

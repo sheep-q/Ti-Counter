@@ -30,84 +30,87 @@ struct TDetailView: View {
         ZStack {
             Color(hex: viewModel.counter.backgroundColor)
                 .ignoresSafeArea()
-            
-            ZStack {
-                // Lottie animation View + Take note View
-                VStack(alignment: .leading) {
-                    CounterHeaderView(viewModel: viewModel, pickDate: $pickDate)
-                        .padding(.bottom, Device.height > 680 ? 45 : 15)
-                        .padding(.leading, 30)
-                        .padding(.trailing, 15)
-                    
-                    ZStack(alignment: .top) {
-                        HStack {
-                            Spacer()
-                            LottieView(animation: .named(viewModel.counter.lottieImage))
-                                .playing(loopMode: .loop)
-                                .offset(x: 50)
-                                .scaleEffect(1.2)
-                        }
-                        
-                        HStack(alignment: .top) {
-                            TimerView(
-                                dateComponent: viewModel.counter.dateComponents,
-                                referenceDate: pickDate,
-                                countkind: viewModel.counter.currentKindCount
-                            )
-                            .padding(.bottom, 10)
-                            
-                            Spacer()
-                            addImageButton
-                        }
-                        .padding(.leading, 30)
-                        .padding(.trailing, 15)
-                        
-                    }
-                    // Button + Take note view
+            ScrollView {
+                ZStack {
+                    // Lottie animation View + Take note View
                     VStack(alignment: .leading) {
-                        Button {
-                            isShowNote = true
-                        } label: {
-                            HStack {
-                                Image(systemName: "square.and.pencil")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 20, height: 20)
-                                Spacer().frame(width: 8)
-                                Image(systemName: "bell.circle")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 20, height: 20)
-                            }
-                            .padding(8)
-                            .background {
-                                RoundedRectangle(cornerRadius: 7)
-                                    .fill(.ultraThinMaterial)
-                                    .opacity(0.2)
-                            }
-                        }
-                        .sheet(isPresented: $isShowNote) {
-                            ToDoView(viewModel: viewModel.counter.todoViewModel)
-                        }
+                        CounterHeaderView(viewModel: viewModel, pickDate: $pickDate)
+                            .padding(.bottom, Device.height > 680 ? 45 : 15)
+                            .padding(.leading, 30)
+                            .padding(.trailing, 15)
                         
-                        TakeNoteView(viewModel: viewModel.counter.todoViewModel)
-                            .padding(.leading, -15)
-                            .padding(.trailing, 30)
+                        ZStack(alignment: .top) {
+                            HStack {
+                                Spacer()
+                                LottieView(animation: .named(viewModel.counter.lottieImage))
+                                    .playing(loopMode: .loop)
+                                    .frame(width: 300, height: 300)
+                                    .offset(x: 30)
+//                                    .scaleEffect(1.2)
+                            }
+                            
+                            HStack(alignment: .top) {
+                                TimerView(
+                                    dateComponent: viewModel.counter.dateComponents,
+                                    referenceDate: pickDate,
+                                    countkind: viewModel.counter.currentKindCount
+                                )
+                                .padding(.bottom, 10)
+                                
+                                Spacer()
+                                addImageButton
+                            }
+                            .padding(.leading, 30)
+                            .padding(.trailing, 15)
+                            
+                        }
+                        // Button + Take note view
+                        VStack(alignment: .leading) {
+                            Button {
+                                isShowNote = true
+                            } label: {
+                                HStack {
+                                    Image(systemName: "square.and.pencil")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 20, height: 20)
+                                    Spacer().frame(width: 8)
+                                    Image(systemName: "bell.circle")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 20, height: 20)
+                                }
+                                .padding(8)
+                                .background {
+                                    RoundedRectangle(cornerRadius: 7)
+                                        .fill(.ultraThinMaterial)
+                                        .opacity(0.2)
+                                }
+                            }
+                            .sheet(isPresented: $isShowNote) {
+                                ToDoView(viewModel: viewModel.counter.todoViewModel)
+                            }
+                            
+                            TakeNoteView(viewModel: viewModel.counter.todoViewModel)
+//                                .padding(.leading, -15)
+//                                .padding(.trailing, 30)
+                        }
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.bottom, -Device.width / 5)
+                        .padding(.leading, 30)
+                        .padding(.trailing, 15)
                     }
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.bottom, -Device.width / 5)
-                    .padding(.leading, 30)
-                    .padding(.trailing, 15)
+                    
                 }
-                
-                VStack {
-                    Spacer()
-                    toolView
-                        .padding(.bottom, 20)
-                }
-                .padding(.leading, 30)
-                .padding(.trailing, 15)
             }
+            
+            VStack {
+                Spacer()
+                toolView
+                    .padding(.bottom, 20)
+            }
+            .padding(.leading, 30)
+            .padding(.trailing, 15)
         }
         .foregroundColor(Color(hex: viewModel.counter.textCorlor))
     }
