@@ -16,15 +16,15 @@ struct TDetailView: View {
     @State private var isShowImageSheet = false
     @State private var isChooseImage = false
     @State private var title = ""
-    
+
     init(viewModel: TDetailViewModel) {
         self.viewModel = viewModel
     }
-    
+
     var body: some View {
         contentView
     }
-    
+
     @ViewBuilder
     var contentView: some View {
         ZStack {
@@ -38,17 +38,20 @@ struct TDetailView: View {
                             .padding(.bottom, Device.height > 680 ? 45 : 15)
                             .padding(.leading, 30)
                             .padding(.trailing, 15)
-                        
+
                         ZStack(alignment: .top) {
                             HStack {
                                 Spacer()
-                                LottieView(animation: .named(viewModel.counter.lottieImage))
-                                    .playing(loopMode: .loop)
-                                    .frame(width: 300, height: 300)
-                                    .offset(x: 30)
-//                                    .scaleEffect(1.2)
+                                GeometryReader { geometry in
+                                    LottieView(animation: .named(viewModel.counter.lottieImage))
+                                        .playing(loopMode: .loop)
+                                        .frame(
+                                            width: geometry.size.width, height: geometry.size.height
+                                        )
+                                        .offset(x: 40)
+                                }
                             }
-                            
+
                             HStack(alignment: .top) {
                                 TimerView(
                                     dateComponent: viewModel.counter.dateComponents,
@@ -56,13 +59,13 @@ struct TDetailView: View {
                                     countkind: viewModel.counter.currentKindCount
                                 )
                                 .padding(.bottom, 10)
-                                
+
                                 Spacer()
                                 addImageButton
                             }
                             .padding(.leading, 30)
                             .padding(.trailing, 15)
-                            
+
                         }
                         // Button + Take note view
                         VStack(alignment: .leading) {
@@ -90,20 +93,20 @@ struct TDetailView: View {
                             .sheet(isPresented: $isShowNote) {
                                 ToDoView(viewModel: viewModel.counter.todoViewModel)
                             }
-                            
+
                             TakeNoteView(viewModel: viewModel.counter.todoViewModel)
-//                                .padding(.leading, -15)
-//                                .padding(.trailing, 30)
+                            //                                .padding(.leading, -15)
+                            //                                .padding(.trailing, 30)
                         }
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.bottom, -Device.width / 5)
                         .padding(.leading, 30)
                         .padding(.trailing, 15)
                     }
-                    
+
                 }
             }
-            
+
             VStack {
                 Spacer()
                 toolView
@@ -114,7 +117,7 @@ struct TDetailView: View {
         }
         .foregroundColor(Color(hex: viewModel.counter.textCorlor))
     }
-    
+
     @ViewBuilder
     var addImageButton: some View {
         Button {
@@ -143,7 +146,7 @@ struct TDetailView: View {
             isChooseImage = true
         }
     }
-    
+
     @ViewBuilder
     var toolView: some View {
         VStack(alignment: .trailing) {
@@ -154,7 +157,7 @@ struct TDetailView: View {
             ) { value in
                 viewModel.counter.textCorlor = value
             }
-            
+
             PickColorView(
                 isText: false,
                 currentColor: viewModel.counter.backgroundColor,
@@ -162,7 +165,7 @@ struct TDetailView: View {
             ) { value in
                 viewModel.counter.backgroundColor = value
             }
-            
+
             PickAnimationView(currenAnimation: viewModel.counter.lottieImage) { value in
                 guard viewModel.counter.lottieImage != value else {
                     return
