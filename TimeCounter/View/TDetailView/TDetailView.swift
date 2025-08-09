@@ -84,7 +84,7 @@ struct TDetailView: View {
 
                     }
                     // Button + Take note view
-                    VStack(alignment: .leading) {
+                    VStack(alignment: .leading, spacing: 10) {
                         Button {
                             isShowNote = true
                         } label: {

@@ -15,8 +15,8 @@ struct TakeNoteView: View {
     }
     
     var body: some View {
-        ForEach(viewModel.allTasks) { task in
-            VStack(spacing: 10) {
+        VStack(alignment: .leading, spacing: 10) {
+            ForEach(viewModel.allTasks) { task in
                 Text("• " + task.title)
                     .multilineTextAlignment(.leading)
                     .fixedSize(horizontal: false, vertical: true)
