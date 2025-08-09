@@ -9,7 +9,8 @@ import Foundation
 
 let dateFormatter = DateFormatter()
 
-class TaskModel: ObservableObject, Identifiable, Codable {
+struct TaskModel: Identifiable, Codable {
+    var id = UUID().uuidString
     
     enum CodingKeys: CodingKey {
         case dateCreated
@@ -20,7 +21,7 @@ class TaskModel: ObservableObject, Identifiable, Codable {
         case isNoti
     }
     
-    required init(from decoder: Decoder) throws {
+    init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         dateCreated = try container.decode(Date.self, forKey: .dateCreated)
         isCheck = try container.decode(Bool.self, forKey: .isCheck)
@@ -38,11 +39,11 @@ class TaskModel: ObservableObject, Identifiable, Codable {
         try container.encode(isNoti, forKey: .isNoti)
     }
     
-    @Published var dateCreated = Date()
-    @Published var isCheck: Bool = false
-    @Published var title: String = ""
-    @Published var notiDate = Date()
-    @Published var isNoti: Bool = false
+    var dateCreated = Date()
+    var isCheck: Bool = false
+    var title: String = ""
+    var notiDate = Date()
+    var isNoti: Bool = false
     
     var dateCreatedString: String {
         dateFormatter.dateFormat = "MMM d yyyy, h:mm a"
