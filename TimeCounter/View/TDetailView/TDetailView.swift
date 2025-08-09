@@ -70,7 +70,7 @@ struct TDetailView: View {
 
                         HStack(alignment: .top) {
                             TimerView(
-                                dateComponent: viewModel.counter.dateComponents,
+                                dateComponent: $viewModel.counter.dateComponents,
                                 referenceDate: pickDate,
                                 countType: viewModel.counter.countType
                             )
@@ -111,6 +111,10 @@ struct TDetailView: View {
                         }
 
                         TakeNoteView(viewModel: viewModel.counter.todoViewModel)
+                        
+                        Button("Debug") {
+                            print(viewModel.counter.dateComponents.activeComponents)
+                        }
                     }
                     .padding(.leading, 30)
                     .padding(.trailing, 15)

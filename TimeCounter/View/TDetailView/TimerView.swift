@@ -10,28 +10,23 @@ import Lottie
 import SwiftUI
 
 struct TimerView: View {
-    @State var dateComponent: DateComponent
+    @Binding var dateComponent: DateComponent
     @State var nowDate: Date = Date()
-    @State var isExpand = false
+    @State private var isExpand = false
     let referenceDate: Date
     var countType: CountType
     let componentFont: CGFloat = 17
     let componentOffset: CGFloat = 15
+    @State private var timer: Timer? = nil
 
     init(
-        dateComponent: DateComponent,
+        dateComponent: Binding<DateComponent>,
         referenceDate: Date,
         countType: CountType = .daysSince
     ) {
-        self.dateComponent = dateComponent
+        self._dateComponent = dateComponent
         self.referenceDate = referenceDate
         self.countType = countType
-    }
-
-    var timer: Timer {
-        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
-            self.nowDate = Date()
-        }
     }
 
     var body: some View {
@@ -40,9 +35,18 @@ struct TimerView: View {
             selectDateComponentView
         }
         .font(.custom(Technology.bold, size: 90))
-        .onAppear(perform: {
-            _ = self.timer
-        })
+        .onAppear {
+            self.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
+                let newDate = Date()
+                if newDate != nowDate {
+                    nowDate = newDate
+                }
+            }
+        }
+        .onDisappear {
+            self.timer?.invalidate()
+            self.timer = nil
+        }
     }
 
     @ViewBuilder
