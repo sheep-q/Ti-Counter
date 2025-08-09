@@ -31,7 +31,7 @@ struct ContentView: View {
             }
         }
         .tabViewStyle(.page(indexDisplayMode: .always))
-        .background(.black)
+        .background(Color(hex: dataList.first?.backgroundColor ?? "#FFFFFF"))
         .ignoresSafeArea()
         .onAppear {
             dataList = getMockData()

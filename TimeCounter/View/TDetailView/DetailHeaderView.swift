@@ -12,12 +12,12 @@ struct DetailHeaderView: View {
     @ObservedObject var viewModel: TDetailViewModel
     @Binding var pickDate: Date
     @State var changeTitle: Bool = false
-
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
             RoundedRectangle(cornerRadius: 7).frame(width: 100, height: 1)
                 .padding(.top, 5)
-
+            
             VStack(alignment: .leading, spacing: 0) {
                 Button {
                     changeTitle.toggle()
@@ -34,19 +34,16 @@ struct DetailHeaderView: View {
                             .foregroundStyle(.tint)
                     }
                 }
-
+                
                 if changeTitle {
                     TextField("Title", text: $viewModel.counter.title)
                         .multilineTextAlignment(.leading)
                         .font(.system(size: 32))
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
                         .foregroundColor(.black)
                         .background(.clear)
                         .padding(.vertical)
                         .frame(maxWidth: .infinity, alignment: .leading)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 10)
-                                .stroke(Color.black, lineWidth: 1)
-                        )
                 } else {
                     Text(viewModel.counter.title)
                         .font(.system(size: 40))
@@ -55,13 +52,25 @@ struct DetailHeaderView: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                 }
             }
-
+            
             HStack(alignment: .center) {
                 Menu {
-                    Button(CountType.daysSince.rawValue, action: viewModel.increaseKind)
-                    Button(CountType.daysUntil.rawValue, action: viewModel.downKind)
+                    Button(CountType.daysSince.title, action: {
+                        viewModel.counter.countType = .daysSince
+                    })
+                    Menu("Days Until") {
+                        Button(DaysUntil.specificDate.rawValue, action: {
+                            viewModel.counter.countType = .daysUntil(.specificDate)
+                        })
+                        Button(DaysUntil.anualYear.rawValue, action: {
+                            viewModel.counter.countType = .daysUntil(.anualYear)
+                        })
+                        Button(DaysUntil.anualMonth.rawValue, action: {
+                            viewModel.counter.countType = .daysUntil(.anualMonth)
+                        })
+                    }
                 } label: {
-                    Text(viewModel.counter.countType.rawValue)
+                    Text(viewModel.counter.countType.title)
                         .font(.body)
                         .padding(7)
                         .background {
@@ -70,12 +79,12 @@ struct DetailHeaderView: View {
                                 .opacity(0.2)
                         }
                 }
-
+                
                 DatePicker(selection: $pickDate, displayedComponents: [.date, .hourAndMinute]) {}
                     .labelsHidden()
                     .colorScheme(.dark)
             }
-
+            
             HStack {
                 RoundedRectangle(cornerRadius: 7)
                     .frame(width: 50, height: 1)
@@ -86,6 +95,6 @@ struct DetailHeaderView: View {
             }
             .padding(.top, 6)
         }
-        .frame(maxWidth: .infinity, alignment: .leading)
+        .frame(maxWidth: .infinity ,alignment: .leading)
     }
 }

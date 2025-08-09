@@ -24,7 +24,6 @@ class TaskModel: ObservableObject, Identifiable, Codable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         dateCreated = try container.decode(Date.self, forKey: .dateCreated)
         isCheck = try container.decode(Bool.self, forKey: .isCheck)
-        priority = try container.decode(String.self, forKey: .priority)
         title = try container.decode(String.self, forKey: .title)
         notiDate = try container.decode(Date.self, forKey: .notiDate)
         isNoti = try container.decode(Bool.self, forKey: .isNoti)
@@ -34,7 +33,6 @@ class TaskModel: ObservableObject, Identifiable, Codable {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(dateCreated, forKey: .dateCreated)
         try container.encode(isCheck, forKey: .isCheck)
-        try container.encode(priority, forKey: .priority)
         try container.encode(title, forKey: .title)
         try container.encode(notiDate, forKey: .notiDate)
         try container.encode(isNoti, forKey: .isNoti)
@@ -42,7 +40,6 @@ class TaskModel: ObservableObject, Identifiable, Codable {
     
     @Published var dateCreated = Date()
     @Published var isCheck: Bool = false
-    @Published var priority: String = ""
     @Published var title: String = ""
     @Published var notiDate = Date()
     @Published var isNoti: Bool = false
@@ -57,10 +54,9 @@ class TaskModel: ObservableObject, Identifiable, Codable {
         return dateFormatter.string(from: notiDate)
     }
     
-    init(title: String, priority: String, notiDate: Date = Date(), isNoti: Bool = false) {
+    init(title: String, notiDate: Date = Date(), isNoti: Bool = false) {
         self.dateCreated = Date()
         self.title = title
-        self.priority = priority
         self.notiDate = notiDate
         self.isNoti = isNoti
     }

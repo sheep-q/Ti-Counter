@@ -9,31 +9,6 @@ import Foundation
 import SwiftUI
 import Swift
 
-enum Priority: String, Identifiable, CaseIterable {
-    
-    var id: UUID {
-        return UUID()
-    }
-    
-    case low = "Low"
-    case medium = "Medium"
-    case high = "High"
-}
-
-extension Priority {
-    
-    var title: String {
-        switch self {
-            case .low:
-                return "Low"
-            case .medium:
-                return "Medium"
-            case .high:
-                return "High"
-        }
-    }
-}
-
 class TodoViewModel: ObservableObject, Codable {
     
     enum CodingKeys: CodingKey {
@@ -52,16 +27,15 @@ class TodoViewModel: ObservableObject, Codable {
     
     @Published var allTasks = [TaskModel]()
     @Published var title: String = ""
-    @Published var selectedPriority: Priority = .medium
     @Published var notiDate = Date()
     @Published var isNoti = false
     
     let notificationManager = NotificationManager()
     
     init() {
-        self.allTasks.append(TaskModel(title: "10/5 đi khám định kỳ, buộc chun lúc đi ngủ ", priority: Priority.medium.rawValue))
-        self.allTasks.append(TaskModel(title: "Thay niềng răng, kéo răng cửa", priority: Priority.high.rawValue, notiDate: Date(), isNoti: true))
-        self.allTasks.append(TaskModel(title: "28/8 du lịch Hải Phòng lần đầu tiên", priority: Priority.low.rawValue))
+        self.allTasks.append(TaskModel(title: "10/5 đi khám định kỳ, buộc chun lúc đi ngủ "))
+        self.allTasks.append(TaskModel(title: "Thay niềng răng, kéo răng cửa", notiDate: Date(), isNoti: true))
+        self.allTasks.append(TaskModel(title: "28/8 du lịch Hải Phòng lần đầu tiên"))
     }
     
     func move(from source: IndexSet, to destination: Int) {
@@ -80,14 +54,19 @@ class TodoViewModel: ObservableObject, Codable {
             let dateMatching = Calendar.current.dateComponents([.timeZone, .year, .month, .hour, .minute, .second], from: notiDate)
             let trigger = UNCalendarNotificationTrigger(dateMatching: dateMatching, repeats: false)
             
-            notificationManager.scheduleNotification(id: title,
-                                                     content: content,
-                                                     trigger: trigger)
+            notificationManager.scheduleNotification(
+                id: title,
+                content: content,
+                trigger: trigger
+            )
         }
-        allTasks.append(TaskModel(title: title,
-                                  priority: selectedPriority.rawValue,
-                                  notiDate: notiDate,
-                                  isNoti: isNoti))
+        allTasks.append(
+            TaskModel(
+                title: title,
+                notiDate: notiDate,
+                isNoti: isNoti
+            )
+        )
         title = ""
         isNoti = false
     }
@@ -98,21 +77,6 @@ class TodoViewModel: ObservableObject, Codable {
                 notificationManager.removePendingNotification(id: allTasks[index].title)
             }
             allTasks.remove(at: index)
-        }
-    }
-    
-    func styleForPriority(_ value: String) -> Color {
-        let priority = Priority(rawValue: value)
-        
-        switch priority {
-            case .low:
-                return Color.orange
-            case .medium:
-                return Color.green
-            case .high:
-                return Color.red
-            default:
-                return Color.black
         }
     }
     

@@ -13,11 +13,4 @@ class TDetailViewModel: ObservableObject {
     init(counterModel: CounterModel = CounterModel()) {
         self.counter = counterModel
     }
-    
-    func increaseKind() {
-        counter.currentKindCount = CountKinds.increase
-    }
-    func downKind() {
-        counter.currentKindCount = CountKinds.down
-    }
 }

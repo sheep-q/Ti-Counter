@@ -50,7 +50,7 @@ struct TDetailView: View {
             ZStack {
                 // Lottie animation View + Take note View
                 VStack(alignment: .leading) {
-                    CounterHeaderView(viewModel: viewModel, pickDate: $pickDate)
+                    DetailHeaderView(viewModel: viewModel, pickDate: $pickDate)
                         .padding(.bottom, Device.height > 680 ? 45 : 15)
                         .padding(.leading, 30)
                         .padding(.trailing, 15)
@@ -72,7 +72,7 @@ struct TDetailView: View {
                             TimerView(
                                 dateComponent: viewModel.counter.dateComponents,
                                 referenceDate: pickDate,
-                                countkind: viewModel.counter.currentKindCount
+                                countType: viewModel.counter.countType
                             )
                             .padding(.bottom, 10)
 
